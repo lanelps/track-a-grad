@@ -1,10 +1,11 @@
 import React from 'react'
 
+import StudentDashboard from './StudentDashboard'
+
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <StudentDashboard />
   )
 }
 
 export default App
-
