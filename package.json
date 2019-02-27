@@ -4,7 +4,7 @@
   "description": "A way to sell our souls",
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
-  "author": "EDA",
+  "author": "Track-A-Grad Team",
   "license": "ISC",
   "scripts": {
     "client": "webpack-dev-server --hot --inline",
