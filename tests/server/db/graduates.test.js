@@ -12,7 +12,7 @@ const seedData = [
   }
 ]
 
-jest.mock('../../../server/db/graduates', () => ({
+jest.mock('../../../server/db/users', () => ({
   getGraduates: () => Promise.resolve({
     id: 1,
     graduate_id: 1,
@@ -25,9 +25,9 @@ jest.mock('../../../server/db/graduates', () => ({
 
 const server = require('../../../server/server')
 
-test('GET gratuates', () => {
+test('GET users', () => {
   return request(server)
-    .get('http://localhost:3000/api/v1/graduates')
+    .get('http://localhost:3000/api/v1/users')
     .expect(200)
     .then((res) => {
       const expected = seedData[0]
