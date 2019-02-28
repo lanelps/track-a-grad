@@ -12,7 +12,7 @@ const seedData = [
   }
 ]
 
-jest.mock('../../../server/db/users', () => ({
+jest.mock('../server/db/users', () => ({
   getGraduates: () => Promise.resolve({
     id: 1,
     graduate_id: 1,
@@ -23,7 +23,7 @@ jest.mock('../../../server/db/users', () => ({
     boolean: 'true'})
 }))
 
-const server = require('../../../server/server')
+const server = require('../server/server')
 
 test('GET users', () => {
   return request(server)
