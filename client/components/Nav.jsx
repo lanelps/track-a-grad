@@ -1,17 +1,24 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Nav () {
   return (
     <div>
       {/* logo div */}
       <div>
-        <a href="#">Track-a-grad</a>
+        <h3>Track-a-grad</h3>
       </div>
       {/* navLinks div */}
-      <div>
-        <a href="#">Login</a>
-        <a href="#">student feed</a>
-        <a href="#">your profile</a>
+      <div className="NavBar">
+        <div className="SignIn">
+          <Link to="/">Sign In</Link>
+        </div>
+        <div className="GraduateFeed">
+          <Link to="/graduatefeed">Graduate Feed</Link>
+        </div>
+        <div className="Profile">
+          <Link to="/graduateprofile">Profile</Link>
+        </div>
       </div>
     </div>
   )
