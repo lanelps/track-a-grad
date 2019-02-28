@@ -4,7 +4,7 @@ import SignIn from './SignIn'
 import GraduateDashboard from './GraduateDashboard'
 import GraduateFeed from './GraduateFeed'
 
-import {HashRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 const App = () => {
   return (
