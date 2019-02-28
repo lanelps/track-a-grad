@@ -5,7 +5,7 @@ import DashBoardHeader from './DashBoardHeader'
 import Info from './Info'
 import ContactForm from './ContactForm'
 
-export default class GradDashboard extends Component {
+export default class GraduateDashboard extends Component {
   render () {
     return (
       <React.Fragment>

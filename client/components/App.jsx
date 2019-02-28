@@ -1,8 +1,8 @@
 import React from 'react'
 
 import SignIn from './SignIn'
-import GradDashboard from './GradDashboard'
-import StudentFeed from './StudentFeed'
+import GraduateDashboard from './GraduateDashboard'
+import GraduateFeed from './GraduateFeed'
 
 import {HashRouter as Router, Route} from 'react-router-dom'
 
@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <React.Fragment>
         <Route exact path ="/" component={SignIn} />
-        <Route exact path="/" component={GradDashboard} />
-        <Route exact path="/studentFeed" component={StudentFeed} />
+        <Route exact path="/graduateDashboard" component={GraduateDashboard} />
+        <Route exact path="/graduateFeed" component={GraduateFeed} />
       </React.Fragment>
     </Router>
   )
