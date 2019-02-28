@@ -27,7 +27,7 @@ const server = require('../server/server')
 
 test('GET users', () => {
   return request(server)
-    .get('http://localhost:3000/api/v1/users')
+    .get('http://localhost:3000/api/v1/users/')
     .expect(200)
     .then((res) => {
       const expected = seedData[0]
