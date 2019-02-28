@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Info () {
   const dummyData = {
-    prfoiles: {
+    profiles: {
       description: 'Profiles Dummy Description'
     },
     education: {
@@ -38,7 +38,7 @@ export default function Info () {
     <React.Fragment>
       <div>
         <h2>Info</h2>
-        
+
         <div>
           {dummyData.profiles.description}
         </div>
