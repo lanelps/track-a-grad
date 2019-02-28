@@ -20,8 +20,8 @@ class GraduateFeed extends Component {
     return (
       <div>
         <Nav />
-        {this.state.map(graduates =>
-          (<GraduateProfile
+        {this.state.map((graduates) => {
+          return (<GraduateProfile
             key={graduates.id}
             status={graduates.status}
             firstName={graduates.firstName}
@@ -33,7 +33,8 @@ class GraduateFeed extends Component {
             githubUrl={graduates.githubUrl}
             workStatus={graduates.workStatus}
           />
-          ))}
+          )
+        })}
       </div>
     )
   }
