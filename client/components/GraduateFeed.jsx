@@ -1,76 +1,48 @@
 import React, {Component} from 'react'
 import GraduateProfile from './GraduateProfile'
 import Nav from './Nav'
+import {connect} from 'react-redux'
 
-export default class GraduateFeed extends Component {
-  state = [
-    {
-    profiles: {
-      id: 1,
-      location: 'Auckland',
-      description: ' Hello, i am a passionate design student.',
-      profilePhoto: 'image'
-    },
-    graduates: {
-      firstName: 'Evandah',
-      lastName: 'Steadman'
-    },
-    workStatuses: {
-      status: 'working'
-    },
-    },
-  {
-      profiles: {
-        id: 2,
-        location: 'Auckland',
-        description: ' Hello, i am a passionate design student.',
-        profilePhoto: 'image'
-      },
-      graduates: {
-        firstName: 'Evandah',
-        lastName: 'Steadman'
-      },
-      workStatuses: {
-        status: 'working'
-      },
-      },
-    {
-      profiles: {
-        id: 3,
-        location: 'Auckland',
-        description: ' Hello, i am a passionate design student.',
-        profilePhoto: 'image'
-      },
-      graduates: {
-        firstName: 'Evandah',
-        lastName: 'Steadman'
-      },
-      workStatuses: {
-        status: 'working'
-      },
-      }]
+import {getGraduates} from '../api/users'
 
+class GraduateFeed extends Component {
+  constructor (props) {
+    super(props)
+    this.state = [props.graduates]
+  }
+
+  // on load get this info
+  componentDidMount () {
+    this.props.dispatch(getGraduates())
+  }
 
   render () {
     return (
       <div>
         <Nav />
-        {this.state.map(graduate =>
-          (<GraduateProfile 
-          key={graduate.profiles.id}
-          status={graduate.workStatuses.status}
-          firstName={graduate.graduates.firstName}
-          lastName={graduate.graduates.lastName}
-          location={graduate.profiles.location}
-          description={graduate.profiles.description}
-            />
-            ))}
+        {this.state.map(graduates =>
+          (<GraduateProfile
+            key={graduates.id}
+            status={graduates.status}
+            firstName={graduates.firstName}
+            lastName={graduates.lastName}
+            profilePicture={graduates.profilePicture}
+            location={graduates.location}
+            cv={graduates.cv}
+            description={graduates.description}
+            githubUrl={graduates.githubUrl}
+            workStatus={graduates.workStatus}
+          />
+          ))}
       </div>
     )
   }
 }
 
+function mapStateToProps (state) {
+  return {
+    graduates: state.graduates
+  }
+}
 
-
-
-
+export default connect(mapStateToProps)(GraduateFeed)
