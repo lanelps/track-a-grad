@@ -10,3 +10,12 @@ export function getGraduates () {
       if (err) throw Error('Cannot get graduates')
     })
 }
+
+export function getProfile (id) {
+  request
+    .get(`${usersUrl}/profiles/${id}`)
+    .then(res => res.body)
+    .catch(err => {
+      if (err) throw Error('Connot get profile')
+    })
+}
