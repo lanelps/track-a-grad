@@ -25,14 +25,15 @@ jest.mock('../server/db/users', () => ({
 
 const server = require('../server/server')
 
-test('GET users', () => {
-  return request(server)
-    .get('http://localhost:3000/api/v1/users/')
+test('GET users', (done) => {
+  request(server)
+    .get('/api/v1/users/')
     .expect(200)
-    .then((res) => {
+    .end((err, res) => {
+      expect(err).toBeNull()
       const expected = seedData[0]
       const actual = res.body
-      expect(expected).toBe(actual)
+      expect(expected).toEqual(actual)
+      done()
     })
-    .catch(err => expect(err).toBeNull())
 })
