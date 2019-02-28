@@ -17,7 +17,7 @@ export default function Nav () {
           <Link to="/graduatefeed">Graduate Feed</Link>
         </div>
         <div className="Profile">
-          <Link to="/graduateprofile">Profile</Link>
+          <Link to="/graduatefeed">Profile</Link>
         </div>
       </div>
     </div>
