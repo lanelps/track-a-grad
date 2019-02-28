@@ -1,10 +1,8 @@
 import React from 'react'
 
-import StudentDashboard from './StudentDashboard'
-
 const App = () => {
   return (
-    <StudentDashboard />
+    <h1>Hi</h1>
   )
 }
 
