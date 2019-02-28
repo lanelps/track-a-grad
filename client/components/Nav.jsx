@@ -5,11 +5,13 @@ export default function Nav () {
     <div>
       {/* logo div */}
       <div>
-        <h1>Track-a-grad</h1>
+        <a href="#">Track-a-grad</a>
       </div>
-      {/* login div */}
+      {/* navLinks div */}
       <div>
-        <h1>Login</h1>
+        <a href="#">Login</a>
+        <a href="#">student feed</a>
+        <a href="#">your profile</a>
       </div>
     </div>
   )
