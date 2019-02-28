@@ -1,9 +1,10 @@
 import React from 'react'
+import Description from './Description'
 
 export default function GraduateProfile () {
   return (
     <div>
-      <h2>StudentProfile</h2>
+      <Description />
     </div>
   )
 }
