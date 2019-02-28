@@ -1,6 +1,7 @@
 import React from 'react'
+
 import SignIn from './SignIn'
-import StudentDashboard from './StudentDashboard'
+import GradDashboard from './GradDashboard'
 import StudentFeed from './StudentFeed'
 
 import {HashRouter as Router, Route} from 'react-router-dom'
@@ -10,7 +11,7 @@ const App = () => {
     <Router>
       <React.Fragment>
         <Route exact path ="/" component={SignIn} />
-        <Route exact path="/studentDashboard" component={StudentDashboard} />
+        <Route exact path="/" component={GradDashboard} />
         <Route exact path="/studentFeed" component={StudentFeed} />
       </React.Fragment>
     </Router>
