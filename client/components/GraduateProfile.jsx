@@ -1,10 +1,13 @@
 import React from 'react'
-import Description from './Description'
 
-export default function GraduateProfile () {
+export default function GraduateProfile (props) {
   return (
-    <div>
-      <Description />
+    <div style={{border: '5px solid red'}}>
+      <h1>{props.status}</h1>
+      <h1>{props.firstName}{props.lastName}</h1>
+      <h1>{props.location}</h1>
+      <h1>{props.description}</h1>
+      <img src={`${props.profiePhoto}`} alt="student-profile-pic"/>
     </div>
   )
 }
