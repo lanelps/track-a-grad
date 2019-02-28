@@ -13,7 +13,7 @@ exports.seed = function (knex, Promise) {
           cv_location: '',
           description: '',
           github_url: '',
-          status: 'useless'
+          work_statuses_id: '1'
         }
       ])
     })
