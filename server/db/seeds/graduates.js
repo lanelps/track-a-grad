@@ -6,9 +6,9 @@ exports.seed = function (knex, Promise) {
       return knex('graduates').insert([
         {
           id: 1,
-          graduateId: 1,
-          firstName: 'John',
-          lastName: 'Smith',
+          graduate_id: 1,
+          first_name: 'John',
+          last_name: 'Smith',
           email: 'john.smith@mail.com',
           hash: '',
           boolean: 'true'}
