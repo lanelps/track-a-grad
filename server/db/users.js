@@ -5,7 +5,8 @@ module.exports = {
   getGraduates
 }
 
-function getGraduates (db = connection) {
-  return db('graduates')
+function getGraduates (status, db = connection) {
+  return db('users')
+    .where('users.boolean', status)
     .select()
 }
