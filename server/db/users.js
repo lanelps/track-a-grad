@@ -14,7 +14,7 @@ function getGraduates (status, db = connection) {
 
 function getProfile (id, db = connection) {
   return db('users')
-    .join('profiles', 'users.graduate_id', 'profiles.grduate_id')
+    .join('profiles', 'users.id', 'profiles.user_id')
     .where('users.id', id)
     .select()
 }

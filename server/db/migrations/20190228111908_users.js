@@ -3,7 +3,6 @@ exports.up = function (knex, Promise) {
     table.increments('id').primary()
     table.string('first_name')
     table.string('last_name')
-    table.integer('user_id')
     table.string('email')
     table.string('hash')
     table.datetime('last_login').defaultTo(knex.fn.now())
