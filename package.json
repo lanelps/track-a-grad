@@ -7,11 +7,11 @@
   "author": "Track-A-Grad Team",
   "license": "ISC",
   "scripts": {
-    "client": "webpack-dev-server --hot --inline",
-    "dev": "node server & webpack --watch",
-    "server": "node server",
+    "start": "concurrently \"node server\" \"webpack --watch\"",
+    "dev": "concurrently 'yarn client' 'yarn server'",
+    "client": "webpack --watch",
+    "server": "nodemon server --ignore server/public",
     "knex": "knex",
-    "start": "webpack && node server",
     "test": "jest --watchAll",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run"
   },
