@@ -1,0 +1,27 @@
+import request from 'superagent'
+
+import {requestSignIn, receiveSignIn} from '../actions/auth'
+
+const authUrl = 'http://localhost:3000/api/v1/auth'
+
+export function signIn (email, password) {
+  return (dispatch) => {
+    dispatch(requestSignIn())
+    request.get(`${authUrl}/signin`)
+      .then(res => {
+        dispatch(receiveSignIn(res.body))
+      })
+      .catch(err => {
+        if (err) throw Error('Connot get sign in details')
+      })
+  }
+}
+
+// export function signIn (email, password) {
+//   request
+//     .get(`${authUrl}/signin${email}`)
+//     .then(res => res.body)
+//     .catch(err => {
+//       if (err) throw Error('Email error')
+//     })
+// }

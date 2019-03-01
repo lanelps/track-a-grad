@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-// import {signin} from '../actions'
+import {signIn} from '../actions/auth'
 
 class SignIn extends React.Component {
   constructor (props) {
@@ -15,45 +15,39 @@ class SignIn extends React.Component {
   }
 
   handleChange (e) {
-    const {email, value} = e.target
+    const {name, value} = e.target
     this.setState({
-      [email]: value
+      [name]: value
     })
   }
 
   handleSubmit (e) {
     const user = this.state
-    this.props.dispatch(signin(user))
+    this.props.dispatch(signIn(user))
     this.setState({
       email: '',
-      password: ''
+      hash: ''
     })
     e.preventDefault()
   }
 
   render () {
-    if (this.props.loggedIn) {
-      return <Redirect to='/' />
+    if (this.props.SignedIn) {
+      return <Redirect to='/graduatefeed' />
     }
 
-    const {email, password} = this.state
+    const {email, hash} = this.state
 
     return (
       <React.Fragment>
-        <center >
-          <h2>SignIn</h2>
-        </center>
-        <center>
-          <h4>Email Field</h4>
-          <input type="text"/>
-        </center>
-        <center>
-          <h4>Password Field</h4>
-          <input type="text"/>
-        </center>
-        <br/>
-        <br/>
-        <a href="/graduatedashboard"><button on Click={this.handleSubmit}>SIGN IN</button></a>
+        <h2>SignIn</h2>
+        <h4>Email Field</h4>
+        <input id='email' name='email' placeholder='email' type="text" onChange={this.handleChange} value={email} />
+        <h4>Password Field</h4>
+        <input id='hash' name="hash" placeholder='password' onChange={this.handleChange} value={hash} />
+        {/* <a href="/graduatedashboard">Pass</a> */}
+        <button on Click={this.handleSubmit}>SIGN IN</button>
+
       </React.Fragment>
     )
   }
@@ -61,7 +55,7 @@ class SignIn extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    signin: state.signin
+    signin: state.signIn
   }
 }
 export default connect(mapStateToProps)(SignIn)
