@@ -22,7 +22,9 @@ export function getProfile (id) {
     dispatch(requestProfile())
     return request
       .get(`${usersUrl}/profiles/${id}`)
-      .then(res => { dispatch(receiveProfile(res.body)) })
+      .then(res => {
+        dispatch(receiveProfile(res.body))
+      })
       .catch(err => {
         if (err) throw Error('Connot get profile')
       })

@@ -23,5 +23,5 @@ function getProfile (id, db = connection) {
     .join('work_experience', 'profiles.id', 'work_experience.profile_id')
     .join('portfolio', 'profiles.id', 'portfolio.profile_id')
     .where('users.id', id)
-    .select()
+    .select('first_name as firstName')
 }

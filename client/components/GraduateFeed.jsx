@@ -18,7 +18,7 @@ class GraduateFeed extends Component {
         <Nav />
         {this.props.graduates.map((graduate) => {
           return (
-            <Link key={graduate.id} to="/graduatedashboard">
+            <Link key={graduate.id} to={`/graduatedashboard/${graduate.id}`} style={{textDecoration: 'none'}}>
               <GraduateProfile
                 key={graduate.id}
                 status={graduate.status}
@@ -49,4 +49,4 @@ function mapStateToProps (state) {
 
 export default connect(mapStateToProps)(GraduateFeed)
 
-//make link to new route with the child component and on didmount in that component it will call the api function
+// make link to new route with the child component and on didmount in that component it will call the api function

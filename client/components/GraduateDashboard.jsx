@@ -4,6 +4,8 @@ import Nav from './Nav'
 import DashBoardHeader from './DashBoardHeader'
 import Info from './Info'
 import ContactForm from './ContactForm'
+
+import {connect} from 'react-redux'
 import {getProfile} from '../api/users'
 
 class GraduateDashboard extends Component {
@@ -25,8 +27,8 @@ class GraduateDashboard extends Component {
 
 function mapStateToProps (state) {
   return {
-    graduates: state.graduates
+    profile: state.profile
   }
 }
 
-export default connect(mapStateToProps)(GraduateFeed)
+export default connect(mapStateToProps)(GraduateDashboard)
