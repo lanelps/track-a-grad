@@ -1,5 +1,5 @@
 const express = require('express')
-const db = require('../db/graduates')
+const db = require('../db/auth')
 const router = express.Router()
 const token = require('../auth/token')
 const hash = require('../auth/hash')
