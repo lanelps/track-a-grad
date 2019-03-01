@@ -9,4 +9,4 @@ exports.seed = function (knex, Promise) {
         {id: 3, profile_id: 3, school: 'EDA', qualifications: 'bootcamp', field_of_study: 'gang business', start_date: '7/1/2019'}
       ])
     })
-};
+}

@@ -7,7 +7,7 @@ export default function GraduateProfile (props) {
       <h1>{props.firstName}{props.lastName}</h1>
       <h1>{props.location}</h1>
       <h1>{props.description}</h1>
-      <img src={`${props.profiePhoto}`} alt="student-profile-pic"/>
+      <img src={`${props.profiePicture}`} alt="student-profile-pic"/>
     </div>
   )
 }
