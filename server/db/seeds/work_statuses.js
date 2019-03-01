@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       return knex('work_statuses').insert([
         {
           id: 1,
-          status: 'useless'
+          status: ''
         }
       ])
     })
