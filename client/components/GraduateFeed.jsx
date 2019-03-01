@@ -48,3 +48,5 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(GraduateFeed)
+
+//make link to new route with the child component and on didmount in that component it will call the api function
