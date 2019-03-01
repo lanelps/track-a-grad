@@ -19,7 +19,7 @@ function getProfile (id, db = connection) {
     .join('profiles', 'users.id', 'profiles.user_id')
     .join('work_statuses', 'profiles.work_statuses_id', 'work_statuses.id')
     .join('cohorts', 'profiles.cohort_id', 'cohorts.id')
-    .join('education', 'profiles.id', 'education.profile.id')
+    .join('education', 'profiles.id', 'education.profile_id')
     .join('work_experience', 'profiles.id', 'work_experience.profile_id')
     .join('portfolio', 'profiles.id', 'portfolio.profile_id')
     .where('users.id', id)

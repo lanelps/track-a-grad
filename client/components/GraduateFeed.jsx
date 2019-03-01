@@ -4,7 +4,7 @@ import GraduateProfile from './GraduateProfile'
 import Nav from './Nav'
 import {connect} from 'react-redux'
 
-import {getGraduates, getProfile} from '../api/users'
+import {getGraduates} from '../api/users'
 
 class GraduateFeed extends Component {
   // on load get this info
@@ -18,7 +18,7 @@ class GraduateFeed extends Component {
         <Nav />
         {this.props.graduates.map((graduate) => {
           return (
-            <Link key={graduate.id} to={}>
+            <Link key={graduate.id} to="/graduatedashboard">
               <GraduateProfile
                 key={graduate.id}
                 status={graduate.status}
