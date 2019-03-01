@@ -7,7 +7,7 @@ const authUrl = 'http://localhost:3000/api/v1/auth'
 export function signIn (email, password) {
   return (dispatch) => {
     dispatch(requestSignIn())
-    request.get(`${authUrl}/signin`)
+    request.get(`${authUrl}/`)
       .then(res => {
         dispatch(receiveSignIn(res.body))
       })

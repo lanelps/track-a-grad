@@ -1,5 +1,5 @@
 const connection = require('./index')
-// const {generateHash} = require('../auth/hash')
+const {generateHash} = require('../auth/hash')
 
 module.exports = {
   signIn
