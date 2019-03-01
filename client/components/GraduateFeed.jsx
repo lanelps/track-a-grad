@@ -28,6 +28,7 @@ class GraduateFeed extends Component {
               description={graduate.description}
               githubUrl={graduate.githubUrl}
               workStatus={graduate.workStatus}
+              // skills={graduate.skills}
             />
           )
         })}
