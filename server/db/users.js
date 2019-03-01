@@ -9,7 +9,9 @@ module.exports = {
 function getGraduates (status, db = connection) {
   return db('users')
     .where('users.boolean', status)
-    .select()
+    .join('profiles', 'users.id', 'profiles.user_id')
+    .join('work_statuses', 'profiles.work_statuses_id', 'work_statuses.id')
+    .select('users.id as id', 'first_name as firstName', 'last_name as lastName', 'email', 'profile_picture as profilePicture', 'location as location', 'cv_location as cv', 'description', 'github_url as githubUrl', 'status as workStatus')
 }
 
 function getProfile (id, db = connection) {
