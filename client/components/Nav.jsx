@@ -13,6 +13,9 @@ export default function Nav () {
         <div className="SignIn">
           <Link to="/">Sign In</Link>
         </div>
+        <div className="Register">
+          <Link to="/registration">Register</Link>
+        </div>
         <div className="GraduateFeed">
           <Link to="/graduatefeed">Graduate Feed</Link>
         </div>

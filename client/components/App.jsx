@@ -3,7 +3,7 @@ import React from 'react'
 import SignIn from './SignIn'
 import GraduateDashboard from './GraduateDashboard'
 import GraduateFeed from './GraduateFeed'
-
+import Registration from './Registration'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
         <Route exact path ="/" component={SignIn} />
         <Route exact path="/graduatedashboard" component={GraduateDashboard} />
         <Route exact path="/graduatefeed" component={GraduateFeed} />
+        <Route exact path="/registration" component={Registration} />
       </React.Fragment>
     </Router>
   )
