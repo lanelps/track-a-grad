@@ -6,11 +6,6 @@ import {connect} from 'react-redux'
 import {getGraduates} from '../api/users'
 
 class GraduateFeed extends Component {
-  constructor (props) {
-    super(props)
-    this.state = [props.graduates]
-  }
-
   // on load get this info
   componentDidMount () {
     this.props.dispatch(getGraduates())
@@ -20,19 +15,20 @@ class GraduateFeed extends Component {
     return (
       <div>
         <Nav />
-        {this.state.map((graduates) => {
-          return (<GraduateProfile
-            key={graduates.id}
-            status={graduates.status}
-            firstName={graduates.firstName}
-            lastName={graduates.lastName}
-            profilePicture={graduates.profilePicture}
-            location={graduates.location}
-            cv={graduates.cv}
-            description={graduates.description}
-            githubUrl={graduates.githubUrl}
-            workStatus={graduates.workStatus}
-          />
+        {this.props.graduates.map((graduate) => {
+          return (
+            <GraduateProfile
+              key={graduate.id}
+              status={graduate.status}
+              firstName={graduate.firstName}
+              lastName={graduate.lastName}
+              profilePicture={graduate.profilePicture}
+              location={graduate.location}
+              cv={graduate.cv}
+              description={graduate.description}
+              githubUrl={graduate.githubUrl}
+              workStatus={graduate.workStatus}
+            />
           )
         })}
       </div>
