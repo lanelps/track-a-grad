@@ -20,12 +20,16 @@ class SignIn extends React.Component {
         </center>
         <center>
           <h4>Email Field</h4>
+          <input type="text"/>
         </center>
         <center>
           <h4>Password Field</h4>
+          <input type="text"/>
         </center>
+        <br/>
+        <br/>
         <center>
-          <button>SIGN IN</button>
+          <a href="/graduatedashboard"><button>SIGN IN</button></a>
         </center>
       </React.Fragment>
     )
