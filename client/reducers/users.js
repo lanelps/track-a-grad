@@ -6,6 +6,10 @@ const graduates = (state = initialState, action) => {
       return state
     case 'RECEIVE_GRADUATES':
       return action.graduates
+    case 'REQUEST_PROFILE':
+      return state
+    case 'RECEIVE_PROFILE':
+      return action.profile
     default:
       return state
   }

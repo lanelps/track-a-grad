@@ -14,7 +14,7 @@ exports.seed = function (knex, Promise) {
           description: '',
           github_url: '',
           work_statuses_id: 1,
-          skills_id: 1
+          skills: ''
         }
       ])
     })
