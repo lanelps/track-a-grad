@@ -8,7 +8,8 @@ exports.up = function (knex, Promise) {
     table.string('cv_location')
     table.string('description')
     table.string('github_url')
-    table.string('work_statuses_id')
+    table.string('work_statuses_id').references('work_statuses.id')
+    table.string('skils_id').references('skills.id')
   })
 }
 
