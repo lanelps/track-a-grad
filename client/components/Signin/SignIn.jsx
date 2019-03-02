@@ -30,7 +30,7 @@ class SignIn extends React.Component {
         <br/>
         <br/>
         <center>
-          <a href="/graduatedashboard"><button>SIGN IN</button></a>
+          <a href="/graduatefeed"><button>SIGN IN</button></a>
         </center>
       </React.Fragment>
     )
