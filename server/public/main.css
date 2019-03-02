@@ -25,6 +25,13 @@ color: #FFFFFF;
 letter-spacing: 1.29px;
 }
 
+h4{
+font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #000000;
+letter-spacing: 0;
+}
+
 p{
 font-family: IBMPlexSans-Light;
 font-size: 18px;
