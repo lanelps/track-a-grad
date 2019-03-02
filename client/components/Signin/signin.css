@@ -54,6 +54,7 @@ letter-spacing: 0;
   padding: 15px 35px 15px 35px;
   border: 1px solid #F39D58;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 .loginWrapper{
@@ -70,6 +71,13 @@ letter-spacing: 0;
   z-index: -1;
 }
 
+.link{
+margin-top: 20px !important;
+font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #F28E5B !important;
+letter-spacing: 0;
+}
 
 /* need to enlarge the image
 need to make the textfield white
