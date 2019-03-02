@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "start": "concurrently \"node server\" \"webpack --watch\"",
-    "dev": "concurrently 'yarn client' 'yarn server'",
+    "dev": "concurrently \"yarn client\" \"yarn server\"",
     "client": "webpack --watch",
     "server": "nodemon server --ignore server/public",
     "knex": "knex",
