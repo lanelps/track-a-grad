@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 
-import Nav from './Nav'
-import DashBoardHeader from './DashBoardHeader'
-import Info from './Info'
-import ContactForm from './ContactForm'
+import Nav from '../Nav'
+import DashBoardHeader from '../DashBoardHeader'
+import Info from '../Info'
+import ContactForm from '../contactForm/ContactForm'
 
 export default class GraduateDashboard extends Component {
   render () {

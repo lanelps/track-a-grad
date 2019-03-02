@@ -1,10 +1,11 @@
 import React from 'react'
 
 import SignIn from './SignIn'
-import GraduateDashboard from './GraduateDashboard'
+import GraduateDashboard from './GraduateDashboard/GraduateDashboard'
 import GraduateFeed from './GraduateFeed'
 import Registration from './Registration'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import '../../server/public/main.css'
 
 const App = () => {
   return (
