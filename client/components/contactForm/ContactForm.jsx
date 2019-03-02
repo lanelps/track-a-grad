@@ -7,12 +7,11 @@ export default function ContactForm () {
 
     <div>
       <h2>Id love to talk...</h2>
-      <form className = "contact">
-        <ReactContactForm to="aubreytekanawa@gmail.com" />
-        <input type='text' placeholder='Name*'/><br/>
-        <input type='text' placeholder='Email*'/>
-        <input type='text' placeholder='Phone*'/><br/>
-        <textarea type='text' placeholder='Message*'/>
+      <form action="https://getform.io/f/1fd513fe-b5e8-41ec-b42e-7a491018333b" method="POST">
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="message" />
+        <button type="submit">Send</button>
       </form>
     </div>
   )
