@@ -1,9 +1,9 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('work_experience').del()
+  return knex('most_recent_employment_details').del()
     .then(function () {
       // Inserts seed entries
-      return knex('work_experience').insert([
+      return knex('most_recent_employment_details').insert([
         {id: 1,
           profile_id: 1,
           role: '',
