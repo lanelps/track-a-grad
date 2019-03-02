@@ -1,9 +1,10 @@
 .signinBlock{
+  position: absolute;
   float: left;
   height: 100vh;
   background-color: #011548;
   width: 30%;
-  margin-left:120px;
+  margin-left:80px;
   z-index: 1;
 }
 span{
@@ -60,6 +61,7 @@ letter-spacing: 0;
 }
 
 .backgroundImage{
+  position: absolute;
   float: right;
   height:100vh;
   right:0;

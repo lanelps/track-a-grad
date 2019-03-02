@@ -45,7 +45,7 @@ class SignIn extends React.Component {
             </div>
           </div>
         </div>
-        <img className="backgroundImage" src='../../images/background.png' alt="tracker"/>
+        <img className="backgroundImage" src='../../images/backimage.png' alt="tracker"/>
       </React.Fragment>
     )
   }

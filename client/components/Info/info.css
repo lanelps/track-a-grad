@@ -1,0 +1,27 @@
+.edit{
+  display:none
+}
+.info-section h2{
+text-transform: uppercase;
+display: block;
+
+}
+
+.info-section{
+  margin-bottom:70px;
+}
+
+.info-section:hover{
+  margin-bottom:70px;
+}
+
+.info-section:hover .edit{
+  display:inline-block;
+}
+
+.align{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #F18048;
+}
