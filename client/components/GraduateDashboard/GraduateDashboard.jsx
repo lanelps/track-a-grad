@@ -6,14 +6,13 @@ import Info from '../Info'
 import ContactForm from '../contactForm/ContactForm'
 
 import {connect} from 'react-redux'
-import {getProfile} from '../api/users'
+import {getProfile} from '../../api/users'
 
 class GraduateDashboard extends Component {
   componentDidMount () {
     this.props.dispatch(getProfile(this.props.match.params.id))
   }
   render () {
-    console.log(this.props.profile)
     return (
       <React.Fragment>
         <h1>Graduate Dashboard</h1>
@@ -23,7 +22,7 @@ class GraduateDashboard extends Component {
             <Nav />
             <DashBoardHeader />
             <Info name={this.props.profile.firstName} />
-            <ContactForm />
+            {/* <ContactForm /> */}
           </React.Fragment>
           : <div>Loading...</div>
         }
