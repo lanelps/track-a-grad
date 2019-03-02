@@ -4,7 +4,7 @@ export default function Info (props) {
   return (
     <React.Fragment>
 
-      <h2>Info</h2>
+      <h2>{props.name}</h2>
 
       <div>{props.name}</div>
 

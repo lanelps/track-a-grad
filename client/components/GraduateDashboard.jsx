@@ -10,16 +10,24 @@ import {getProfile} from '../api/users'
 
 class GraduateDashboard extends Component {
   componentDidMount () {
-    this.props.dispatch(getProfile())
+    this.props.dispatch(getProfile(this.props.match.params.id))
   }
   render () {
+    console.log(this.props.profile)
     return (
       <React.Fragment>
         <h1>Graduate Dashboard</h1>
-        <Nav />
-        <DashBoardHeader />
-        <Info />
-        <ContactForm />
+
+        {(this.props.profile)
+          ? <React.Fragment>
+            <Nav />
+            <DashBoardHeader />
+            <Info name={this.props.profile.firstName} />
+            <ContactForm />
+          </React.Fragment>
+          : <div>Loading...</div>
+        }
+
       </React.Fragment>
     )
   }

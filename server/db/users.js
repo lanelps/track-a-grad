@@ -23,5 +23,6 @@ function getProfile (id, db = connection) {
     .join('work_experience', 'profiles.id', 'work_experience.profile_id')
     .join('portfolio', 'profiles.id', 'portfolio.profile_id')
     .where('users.id', id)
-    .select('first_name as firstName')
+    .first()
+    .select('users.id as id', 'first_name as firstName', 'last_name as lastName', 'email', 'profile_picture as profilePicture', 'cv_location as cv', 'github_url as githubUrl', 'status as workStatus')
 }
