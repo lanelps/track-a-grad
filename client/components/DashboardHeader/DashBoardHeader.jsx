@@ -1,9 +1,10 @@
 import React from 'react'
+import './dashboardheader.css'
 
 export default function DashBoardHeader () {
   const dummyData = {
     profiles: {
-      profilePhoto: 'https://twistedsifter.com/2012/09/one-trippy-profile-pic/',
+      profilePhoto: '../../images/avatars/avatar1.png',
       location: 'Te Kuiti',
       cvLink: 'https://resume.io'
     },

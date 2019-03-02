@@ -1,7 +1,8 @@
-import React from 'react'
-import {Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {signIn} from '../actions/auth'
+import React, {Component} from 'react'
+import './signin.css'
+// import {Redirect} from 'react-router-dom'
+// import {connect} from 'react-redux'
+// import {signin} from '../actions/auth'
 
 class SignIn extends React.Component {
   constructor (props) {
@@ -48,6 +49,22 @@ class SignIn extends React.Component {
         {/* <a href="/graduatedashboard">Pass</a> */}
         <button on Click={this.handleSubmit}>SIGN IN</button>
 
+        <center>
+          <h2>SignIn</h2>
+        </center>
+        <center>
+          <h4>Email Field</h4>
+          <input type="text"/>
+        </center>
+        <center>
+          <h4>Password Field</h4>
+          <input type="text"/>
+        </center>
+        <br/>
+        <br/>
+        <center>
+          <a href="/graduatefeed"><button>SIGN IN</button></a>
+        </center>
       </React.Fragment>
     )
   }

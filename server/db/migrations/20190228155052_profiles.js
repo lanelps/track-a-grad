@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
     table.string('description')
     table.string('github_url')
     table.integer('work_statuses_id').references('work_statuses.id')
-    table.integer('skills_id').references('skills.id')
+    table.string('skills')
   })
 }
 
