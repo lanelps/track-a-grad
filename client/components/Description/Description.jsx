@@ -1,4 +1,5 @@
 import React from 'react'
+import './description.css'
 
 export default function Description () {
   const dummyData = {

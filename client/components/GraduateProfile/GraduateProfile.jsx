@@ -1,4 +1,5 @@
 import React from 'react'
+import './graduateprofile.css'
 
 export default function GraduateProfile (props) {
   return (

@@ -1,4 +1,5 @@
 import React from 'react'
+import './dashboardheader.css'
 
 export default function DashBoardHeader () {
   const dummyData = {
