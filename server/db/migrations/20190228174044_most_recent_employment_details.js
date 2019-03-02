@@ -1,10 +1,10 @@
 exports.up = function (knex, Promise) {
-  return knex.schema.createTable('education', table => {
+  return knex.schema.createTable('most_recent_employment_details', table => {
     table.increments('id').primary()
     table.integer('profile_id').references('profiles.id')
-    table.string('school')
-    table.string('qualifications')
-    table.string('field_of_study')
+    table.string('role')
+    table.string('organisation')
+    table.string('Location')
     table.string('start_date')
     table.string('end_date')
     table.string('description')
@@ -12,5 +12,5 @@ exports.up = function (knex, Promise) {
 }
 
 exports.down = function (knex, Promise) {
-  return knex.schema.dropTable('education')
+  return knex.schema.dropTable('most_recent_employment_details')
 }
