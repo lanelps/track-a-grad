@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import TextField from '@material-ui/core/TextField'
 import './signin.css'
 // import {Redirect} from 'react-router-dom'
 // import {connect} from 'react-redux'
@@ -16,22 +17,34 @@ class SignIn extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <center>
-          <h2>SignIn</h2>
-        </center>
-        <center>
-          <h4>Email Field</h4>
-          <input type="text"/>
-        </center>
-        <center>
-          <h4>Password Field</h4>
-          <input type="text"/>
-        </center>
-        <br/>
-        <br/>
-        <center>
-          <a href="/graduatefeed"><button>SIGN IN</button></a>
-        </center>
+        <div className="SignInBlock">
+          <div>
+            <img src="logo"/>
+            <div>
+              <span className="sub-title">Welcome to</span>
+              <span className="title">Your GradProfile</span>
+            </div>
+            <div>
+              <TextField
+                id="standard-dense"
+                label="Email"
+                margin="dense"
+              />
+              <TextField
+                id="standard-password-input"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+                margin="normal"
+              />
+            </div>
+            <div>
+              <a href="/graduatefeed">Login</a>
+            </div>
+
+          </div>
+        </div>
+
       </React.Fragment>
     )
   }
