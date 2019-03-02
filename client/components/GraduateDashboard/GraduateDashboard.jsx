@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 
-import Nav from '../Nav'
-import DashBoardHeader from '../DashBoardHeader'
-import Info from '../Info'
+import Nav from '../Nav/Nav'
+import DashBoardHeader from '../../../DashboardHeader/DashBoardHeader'
+import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
+import './graduatedashboard.css'
 
 import {connect} from 'react-redux'
 import {getProfile} from '../../api/users'
