@@ -1,4 +1,37 @@
-div {
-  background-color:#99cc00;
-  padding:10px;
+body{
+  text-decoration: none !important;
+  background-color: #F18048;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h1{
+font-family: IBMPlexSans-SemiBold;
+font-size: 35px;
+color: #011548;
+letter-spacing: 0;
+}
+
+h2{
+  font-family: IBMPlexSans;
+  font-size: 14px;
+  color: #011548;
+  letter-spacing: 1.29px;
+}
+
+h3{
+font-family: IBMPlexSans-Light;
+font-size: 14px;
+color: #FFFFFF;
+letter-spacing: 1.29px;
+}
+
+p{
+font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #979797;
+letter-spacing: 0;
+}
+
+a{
+  text-decoration:none;
 }
