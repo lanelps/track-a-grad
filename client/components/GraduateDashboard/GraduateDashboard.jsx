@@ -16,10 +16,10 @@ class GraduateDashboard extends Component {
   render () {
     return (
       <React.Fragment>
-        <h1>Graduate Dashboard</h1>
         {(this.props.profile)
           ? <React.Fragment>
             <Nav />
+            <h1>Graduate Dashboard</h1>
             <div className="graduatedashboard">
             Header
               <DashBoardHeader
