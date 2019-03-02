@@ -16,8 +16,8 @@ class GraduateFeed extends Component {
   render () {
     return (
       <div>
-        <h1>Graduate Feed</h1>
         <Nav />
+        <h1>Graduate Feed</h1>
         {this.props.graduates.map((graduate) => {
           return (
             <Link key={graduate.id} to={`/graduatedashboard/${graduate.id}`} style={{textDecoration: 'none'}}>
