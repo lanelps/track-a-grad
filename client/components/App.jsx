@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SignIn from './SignIn/SignIn'
+import SignIn from './Signin/SignIn'
 import GraduateDashboard from './GraduateDashboard/GraduateDashboard'
 import GraduateFeed from './GraduateFeed/GraduateFeed'
 import Registration from './Registration/Registration'
