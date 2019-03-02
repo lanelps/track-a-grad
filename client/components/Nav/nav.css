@@ -1,14 +1,28 @@
-.navbar a{
-  text-decoration: none;
-  color: black;
-}
 
-.navbar a:hover{
-  color: white;
-}
 
-.navbar div{
-  display: inline-block;
+.navWrapper{
+  display: block;
   padding: 10px;
-  margin: 10px;
+  height:auto;
+  width:100vw;
+  position:fixed;
+  background-color: #011548;
+}
+
+.navlogo{
+  padding: 30px;
+  float:left;
+}
+
+.menu{
+  margin-right: 50px;
+  float: right;
+  font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #FFFFFF;
+letter-spacing: 0;
+}
+
+.menu a{
+  display: inline;
 }
