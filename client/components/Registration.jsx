@@ -18,4 +18,4 @@ export default function Registration () {
   )
 }
 // MVP 1 - Needs to redirect onclick to the login page so that they can come into their editable profile via the login screen.
-// MVP 4 - If administrator section is acheived. This will require a redirect onclick to a validation page notifying the user that their profile will be validated by an EDA administrator between 24-48 hours and notify the administrator that a new user has registered. 
+// MVP 4 - If administrator section is acheived. This will require a redirect onclick to a validation page notifying the user that their profile will be validated by an EDA administrator between 24-48 hours and notify the administrator that a new user has registered.

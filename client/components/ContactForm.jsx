@@ -1,17 +1,13 @@
 import React from 'react'
-
+import ReactContactForm from 'react-mail-form'
 export default function ContactForm () {
   return (
+
     <div>
       <h2>Id love to talk...</h2>
-      <form>
-        <input type='text' placeholder='Name*'/><br/>
-        <input type='text' placeholder='Email*'/>
-        <input type='text' placeholder='Phone*'/><br/>
-        <textarea type='text' placeholder='Message*'/>
+      <form className = "contact-form">
+        <ReactContactForm to="aubreytekanawa@gmail.com" />
       </form>
-      <a href="/graduatedashboard"><button>Send</button></a>
-
     </div>
   )
 }

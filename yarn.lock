@@ -6153,6 +6153,14 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-mail-form@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-mail-form/-/react-mail-form-1.0.2.tgz#180f542cded126cfd8315a976cc059b0658fb1bd"
+  integrity sha512-4zrx5AKf+SlSzRqBIx3IaMEXFR6Gy1G2Mwd6i3I52lLTo6CxO8DJAdDMT9SufZLdzJYKa2Ll3wxOX2+5HQJvLQ==
+  dependencies:
+    prop-types "^15.6.1"
+    react "^16.3.2"
+
 react-overlays@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-1.1.2.tgz#9b203154bf023554fdd151a8bd431240c0883461"
@@ -6243,7 +6251,7 @@ react-transition-group@^2.2.1, react-transition-group@^2.5.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.8.3:
+react@^16.3.2, react@^16.8.3:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
   integrity sha512-3UoSIsEq8yTJuSu0luO1QQWYbgGEILm+eJl2QN/VLDi7hL+EN18M3q3oVZwmVzzBJ3DkM7RMdRwBmZZ+b4IzSA==
