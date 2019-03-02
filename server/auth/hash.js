@@ -16,7 +16,7 @@ function generateHash (password) {
   )
 }
 
-function verify (hash, password) {
-  return sodium.ready.then(() =>
-    sodium.crypto_pwhash_str_verify(hash, password))
-}
+// function verify (hash, password) {
+//   return sodium.ready.then(() =>
+//     sodium.crypto_pwhash_str_verify(hash, password))
+// }

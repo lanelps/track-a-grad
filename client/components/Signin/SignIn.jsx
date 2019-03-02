@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import TextField from '@material-ui/core/TextField'
 import './signin.css'
-// import {Redirect} from 'react-router-dom'
-// import {connect} from 'react-redux'
-// import {signin} from '../actions/auth'
+import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {signIn} from '../../actions/auth'
 
 class SignIn extends React.Component {
   constructor (props) {
