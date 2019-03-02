@@ -21,8 +21,19 @@ class GraduateDashboard extends Component {
           ? <React.Fragment>
             <Nav />
             <div className="graduatedashboard">
-              <DashBoardHeader />
-              <Info name={this.props.profile.firstName} />
+            Header
+              <DashBoardHeader
+                firstName={this.props.profile.firstName} LastName={this.props.profile.lastName} workStatus={this.props.profile.workStatus}
+                location={this.props.profile.location}
+                cohort={this.props.profile.cohort}
+                cv={this.props.profile.cv}
+              />
+              Info
+              <Info
+                skills={this.props.profile.skills}
+
+              />
+              Contact Form
               <ContactForm />
             </div>
           </React.Fragment>
