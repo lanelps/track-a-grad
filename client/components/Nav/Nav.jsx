@@ -10,7 +10,7 @@ export default function Nav () {
         <h3>Track-a-grad</h3>
       </div>
       {/* navLinks div */}
-      <div className="NavBar">
+      <div className="navbar">
         <div className="SignIn">
           <Link to="/">Sign In</Link>
         </div>
