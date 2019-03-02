@@ -17,11 +17,11 @@ class SignIn extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className="SignInBlock">
-          <div>
-            <img src="logo"/>
-            <div>
-              <span className="sub-title">Welcome to</span>
+        <div className="signinBlock">
+          <div className="container">
+            <img className="logo" src='../../images/trackergrad-logo.png' alt="tracker"/>
+            <div className="titleWrapper">
+              <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
             <div>
@@ -29,6 +29,7 @@ class SignIn extends React.Component {
                 id="standard-dense"
                 label="Email"
                 margin="dense"
+                className="input"
               />
               <TextField
                 id="standard-password-input"
@@ -36,15 +37,15 @@ class SignIn extends React.Component {
                 type="password"
                 autoComplete="current-password"
                 margin="normal"
+                className="input"
               />
             </div>
-            <div>
-              <a href="/graduatefeed">Login</a>
+            <div className="loginWrapper">
+              <a href="/graduatefeed" className="loginButton">Login</a>
             </div>
-
           </div>
         </div>
-
+        <img className="backgroundImage" src='../../images/background.png' alt="tracker"/>
       </React.Fragment>
     )
   }
