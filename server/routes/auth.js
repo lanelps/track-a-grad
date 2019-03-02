@@ -3,6 +3,13 @@ const db = require('../db/auth')
 const router = express.Router()
 const token = require('../auth/token')
 const hash = require('../auth/hash')
+// const verifyJwt = require('express-jwt')
+
+// router.get(
+//   '/route-we-want-to-protect',
+//   verifyJwt({secret: process.env.JWT_SECRET}),
+//   routeWeWantToProtect
+// )
 
 router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkGraduate, token.issue)
