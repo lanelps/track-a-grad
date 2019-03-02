@@ -13,14 +13,14 @@ letter-spacing: 0;
 
 h2{
   font-family: IBMPlexSans;
-  font-size: 14px;
+  font-size: 12px;
   color: #011548;
   letter-spacing: 1.29px;
 }
 
 h3{
 font-family: IBMPlexSans-Light;
-font-size: 14px;
+font-size: 12px;
 color: #FFFFFF;
 letter-spacing: 1.29px;
 }
@@ -34,7 +34,7 @@ letter-spacing: 0;
 
 p{
 font-family: IBMPlexSans-Light;
-font-size: 18px;
+font-size: 16px;
 color: #979797;
 letter-spacing: 0;
 }

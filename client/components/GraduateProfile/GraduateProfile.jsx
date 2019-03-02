@@ -16,10 +16,16 @@ export default function GraduateProfile (props) {
         </div>
         <div className="statusBar">
           {/* <p>{props.status} </p> */}
-          <p>{props.workStatus}</p>
+          <h3>{props.workStatus}</h3>
         </div>
       </div>
-      <p>Point of difference: {props.description}</p>
+      <h2>POINT OF DIFFERENCE </h2>
+      <p>{props.description}</p>
+      <h2>SKILLS </h2>
+      {/* <p>{props.skills}</p> */}
+      <h3>Redux</h3>
+      <h3>React</h3>
+      <h3>SQl</h3>
     </div>
   )
 }

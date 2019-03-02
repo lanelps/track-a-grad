@@ -1,18 +1,11 @@
 .graduateprofile{
   margin-top: 20px; 
-  padding: 20px;
+  padding: 40px 30px 60px 30px;
   background-color: white;
-  border-radius: 10px;
   width: 60%;
   margin-left: 35px;
-}
-
-.graduateprofile p{
-  color: black;
-}
-
-.graduateprofile h3{
-  color: black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.34);
+  border-radius: 18px;
 }
 
 .graduateprofile:hover{
@@ -33,7 +26,18 @@
   display: inline-block
 }
 
-.statusBar p{
+.statusBar h3{
+  display: inline-block;
+  padding: 15px;
+  font-family: IBMPlexSans-Light;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 2.50px;
+  background: #011548;
+  border-radius: 7.5px;
+  text-transform: uppercase;
+}
+.graduateprofile h3{
   display: inline-block;
   padding: 15px;
   font-family: IBMPlexSans-Light;
@@ -42,5 +46,6 @@
   letter-spacing: 2.50px;
   background: #011548;
   border-radius: 7.5px;
-  text-transform: uppercase;
+  text-transform: uppercase; 
+  margin-right: 25px;
 }
