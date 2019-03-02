@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
+import GraduateProfile from '../GraduateProfile/GraduateProfile'
+import Nav from '../Nav/Nav'
 import {Link} from 'react-router-dom'
-import GraduateProfile from './GraduateProfile'
-import Nav from './Nav'
 import {connect} from 'react-redux'
 
-import {getGraduates} from '../api/users'
+import {getGraduates} from '../../api/users'
+import './graduatefeed.css'
 
 class GraduateFeed extends Component {
   // on load get this info
