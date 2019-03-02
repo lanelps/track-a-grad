@@ -1,0 +1,75 @@
+.signinBlock{
+  float: left;
+  height: 100vh;
+  background-color: #011548;
+  width: 30%;
+  margin-left:120px;
+  z-index: 1;
+}
+span{
+  display:block;
+}
+
+.container{
+  margin-left:50px;
+}
+
+.logo{
+  margin-top: 60px;
+}
+
+.titleWrapper{
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.subtitle{
+font-family: IBMPlexSans-SemiBold;
+font-size: 20px;
+color: #FFFFFF;
+letter-spacing: 0;
+}
+
+.title{
+font-family: IBMPlexSans-SemiBold;
+font-size: 35px;
+color: #FFFFFF;
+letter-spacing: 0;
+}
+
+.input{
+font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #FFFFFF !important;
+letter-spacing: 0;
+width: 80%;
+}
+
+.loginButton{
+font-family: IBMPlexSans-Light;
+font-size: 18px;
+color: #F28E5B;
+letter-spacing: 0;
+  padding: 15px 35px 15px 35px;
+  border: 1px solid #F39D58;
+  border-radius: 10px;
+}
+
+.loginWrapper{
+  margin-top:70px;
+}
+
+.backgroundImage{
+  float: right;
+  height:100vh;
+  right:0;
+  bottom:0;
+  width:auto;
+  z-index: -1;
+}
+
+
+/* need to enlarge the image
+need to make the textfield white
+need to make the image in the background
+need to make it responsive */

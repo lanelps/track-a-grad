@@ -25,23 +25,17 @@ export default class EditProfile extends Component {
   handleSubmit () {
     console.log('hit me')
     this.setState({
-      activeEdit: false
+      activeEdit: false,
+      [event.target.name]: event.target.value
     })
   }
   render () {
     return (
       <React.Fragment>
-        <TextField
-          id="standard-multiline-flexible"
-          label="Multiline"
-          multiline = {this.state.activeEdit}
-          disabled = {!this.state.activeEdit}
-          rowsMax="5"
-          margin="normal"
-          value={this.state.name}
-          name='name'
-          onChange={this.handleChange}
-        />
+        <form>
+          <textarea value={this.state.name} onChange={this.handleChange}
+            name={name} disabled={!this.state.activeEdit}></textarea>
+        </form>
         <button onClick={this.handleSubmit}> submit </button>
         <button onClick={this.handleEdit}> edit </button>
       </React.Fragment>

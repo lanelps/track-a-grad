@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import Nav from '../Nav/Nav'
-import DashBoardHeader from '../../../DashboardHeader/DashBoardHeader'
+import DashBoardHeader from '../DashboardHeader/DashBoardHeader'
 import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
 import './graduatedashboard.css'
@@ -17,13 +17,25 @@ class GraduateDashboard extends Component {
     return (
       <React.Fragment>
         <h1>Graduate Dashboard</h1>
-
         {(this.props.profile)
           ? <React.Fragment>
             <Nav />
-            <DashBoardHeader />
-            <Info name={this.props.profile.firstName} />
-            {/* <ContactForm /> */}
+            <div className="graduatedashboard">
+            Header
+              <DashBoardHeader
+                firstName={this.props.profile.firstName} LastName={this.props.profile.lastName} workStatus={this.props.profile.workStatus}
+                location={this.props.profile.location}
+                cohort={this.props.profile.cohort}
+                cv={this.props.profile.cv}
+              />
+              Info
+              <Info
+                skills={this.props.profile.skills}
+
+              />
+              Contact Form
+              <ContactForm />
+            </div>
           </React.Fragment>
           : <div>Loading...</div>
         }

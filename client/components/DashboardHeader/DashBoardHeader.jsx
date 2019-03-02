@@ -1,42 +1,22 @@
 import React from 'react'
 import './dashboardheader.css'
 
-export default function DashBoardHeader () {
-  const dummyData = {
-    profiles: {
-      profilePhoto: '../../images/avatars/avatar1.png',
-      location: 'Te Kuiti',
-      cvLink: 'https://resume.io'
-    },
-    users: {
-      firstName: 'Yo',
-      lastName: 'Mama'
-    },
-    workStatuses: {
-      status: 'pimpin aint easy'
-    },
-    cohorts: {
-      cohort: 'harakeke-2019'
-
-    }
-  }
-
+export default function DashBoardHeader (props) {
   return (
     <React.Fragment>
-      {/* photo div */}
-      <div>
-        <img src={`${dummyData.profiles.profilePhoto}`} alt="student-profile-photo" height="42" width="42" />
-      </div>
-      {/* information div */}
-      <div>
-        <h3>{dummyData.workStatuses.status}</h3>
-        <h3>{dummyData.users.firstName}{dummyData.users.lastName}</h3>
-        <h3>{dummyData.profiles.location}</h3>
-        <h3>{dummyData.cohorts.cohort}</h3>
-      </div>
-      {/* cv div */}
-      <div>
-        <a href={`${dummyData.profiles.cvLink}`}>See CV</a>
+      <div className="dashboardheader">
+        <img src="../../images/avatars/avatar32.png" alt="student-profile-photo" height="100" />
+
+        <div className="headerinfo">
+          <p>{props.workStatus}</p>
+          <p>{props.firstName}{props.lastName}</p>
+          <p>{props.location}</p>
+          <p>{props.cohort}</p>
+        </div>
+
+        <div>
+          <a href="#">See C.V</a>
+        </div>
       </div>
     </React.Fragment>
   )

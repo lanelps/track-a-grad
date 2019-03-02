@@ -16,20 +16,19 @@ class GraduateFeed extends Component {
   render () {
     return (
       <div>
+        <h1>Graduate Feed</h1>
         <Nav />
         {this.props.graduates.map((graduate) => {
           return (
             <Link key={graduate.id} to={`/graduatedashboard/${graduate.id}`} style={{textDecoration: 'none'}}>
               <GraduateProfile
                 key={graduate.id}
-                status={graduate.status}
                 firstName={graduate.firstName}
                 lastName={graduate.lastName}
                 profilePicture={graduate.profilePicture}
                 location={graduate.location}
                 cv={graduate.cv}
                 description={graduate.description}
-                githubUrl={graduate.githubUrl}
                 workStatus={graduate.workStatus}
 
               // skills={graduate.skills}

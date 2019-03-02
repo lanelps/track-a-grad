@@ -2,6 +2,8 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable('profiles', table => {
     table.increments('id').primary()
     table.integer('user_id').references('users.id')
+    table.string('first_name')
+    table.string('last_name')
     table.integer('cohort_id')
     table.string('profile_picture')
     table.string('location')

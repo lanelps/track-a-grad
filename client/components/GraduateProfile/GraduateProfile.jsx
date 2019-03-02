@@ -3,13 +3,14 @@ import './graduateprofile.css'
 
 export default function GraduateProfile (props) {
   return (
-    <div style={{border: '1px solid red', marginTop: '20px', padding: '20px'}}>
-      <p>{props.status}</p>
+    <div className="graduateprofile">
+      {/* <img src={`${props.profilePicture}`} alt="student-profile-picture"/> */}
+      <img src="../../images/avatars/avatar32.png" width="100"/>
       <h1>{props.firstName} {props.lastName}</h1>
-      <h3><span>Just a bit {props.workStatus} arent ya {props.firstName}?</span></h3>
+      <p>{props.status}</p>
+      <p>Status: {props.workStatus}</p>
       <h3>{props.location}</h3>
-      <p>{props.description}</p>
-      <img src={`${props.profiePicture}`} alt="student-profile-picture"/>
+      <p>Point of difference: {props.description}</p>
     </div>
   )
 }
