@@ -6,16 +6,37 @@ import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
 import './graduatedashboard.css'
 
-export default class GraduateDashboard extends Component {
+import {connect} from 'react-redux'
+import {getProfile} from '../../api/users'
+
+class GraduateDashboard extends Component {
+  componentDidMount () {
+    this.props.dispatch(getProfile(this.props.match.params.id))
+  }
   render () {
     return (
       <React.Fragment>
         <h1>Graduate Dashboard</h1>
-        <Nav />
-        <DashBoardHeader />
-        <Info />
-        <ContactForm />
+
+        {(this.props.profile)
+          ? <React.Fragment>
+            <Nav />
+            <DashBoardHeader />
+            <Info name={this.props.profile.firstName} />
+            {/* <ContactForm /> */}
+          </React.Fragment>
+          : <div>Loading...</div>
+        }
+
       </React.Fragment>
     )
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    profile: state.profile
+  }
+}
+
+export default connect(mapStateToProps)(GraduateDashboard)
