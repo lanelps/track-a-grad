@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <React.Fragment>
         <Route exact path ="/" component={SignIn} />
-        <Route exact path="/graduatedashboard" component={GraduateDashboard} />
+        <Route exact path="/graduatedashboard/:id" component={GraduateDashboard} />
         <Route exact path="/graduatefeed" component={GraduateFeed} />
         <Route exact path="/registration" component={Registration} />
       </React.Fragment>

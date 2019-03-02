@@ -17,6 +17,12 @@ function getGraduates (status, db = connection) {
 function getProfile (id, db = connection) {
   return db('users')
     .join('profiles', 'users.id', 'profiles.user_id')
+    .join('work_statuses', 'profiles.work_statuses_id', 'work_statuses.id')
+    .join('cohorts', 'profiles.cohort_id', 'cohorts.id')
+    .join('education', 'profiles.id', 'education.profile_id')
+    .join('work_experience', 'profiles.id', 'work_experience.profile_id')
+    .join('portfolio', 'profiles.id', 'portfolio.profile_id')
     .where('users.id', id)
-    .select()
+    .first()
+    .select('users.id as id', 'first_name as firstName', 'last_name as lastName', 'email', 'profile_picture as profilePicture', 'cv_location as cv', 'github_url as githubUrl', 'status as workStatus')
 }
