@@ -15,7 +15,26 @@ exports.seed = function (knex, Promise) {
           email: 'boss.guy@mail.com',
           hash: '',
           last_login: '',
-          boolean: 'false'}
+          boolean: 'false'},
+        {
+          id: 3,
+          email: 'boss.girl@mail.com',
+          hash: '',
+          last_login: '',
+          boolean: 'false'},
+        {
+          id: 4,
+          email: 'janedoe.unknown@mail.com',
+          hash: '',
+          last_login: '',
+          boolean: 'false'},
+        {
+          id: 5,
+          email: 'johndoe.anonymous@mail.com',
+          hash: '',
+          last_login: '',
+          boolean: 'false'},
+            
       ])
     })
 }

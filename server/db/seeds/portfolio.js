@@ -6,15 +6,15 @@ exports.seed = function (knex, Promise) {
       return knex('portfolio').insert([
         {id: 1,
           profile_id: 1,
-          title: 'a',
-          link_url: '',
-          description: ''
+          title: 'best app in the world',
+          link_url: 'https://github.com/harakeke-2019/track-a-grad',
+          description: 'An app to display grads to the world'
         },
         {id: 2,
           profile_id: 2,
-          title: 'b',
-          link_url: '',
-          description: ''
+          title: 'basketball',
+          link_url: 'https://www.youtube.com/watch?v=Oi7vRx-0nCY',
+          description: 'Not a real student app, but lets watch some bball for fun'
         }
       ])
     })
