@@ -17,6 +17,7 @@ class GraduateFeed extends Component {
     return (
       <div>
         <Nav />
+        <div className="spacer"></div>
         <h1>Graduate Feed</h1>
         {this.props.graduates.map((graduate) => {
           return (

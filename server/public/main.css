@@ -1,4 +1,5 @@
 body{
+  margin:0;
   text-decoration: none !important;
   background-color: #F18048;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -41,4 +42,8 @@ letter-spacing: 0;
 
 a{
   text-decoration:none;
+}
+
+.spacer{
+  padding: 70px;
 }
