@@ -68,9 +68,12 @@ class SignIn extends React.Component {
             <div className="loginWrapper">
               <a href="/graduatefeed" className="loginButton">Login</a>
             </div>
+            <div className="link">
+              <a href="/registration">Register</a>
+            </div>
           </div>
         </div>
-        <img className="backgroundImage" src='../../images/background.png' alt="tracker"/>
+        <img className="backgroundImage" src='../../images/backimage.png' alt="tracker"/>
       </React.Fragment>
     )
   }
