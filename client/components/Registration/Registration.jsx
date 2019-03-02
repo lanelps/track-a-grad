@@ -1,4 +1,5 @@
 import React from 'react'
+import './registration.css'
 
 export default function Registration () {
   return (
@@ -9,8 +10,6 @@ export default function Registration () {
         <input type='text' name='firstName' placeholder='First Name*'/><br/>
         <input type='text' name='lastName' placeholder='Last Name*'/><br/>
         <input type='text' name='email' placeholder='Email*'/><br/>
-        <input type='text' name='cohort' placeholder='Cohort*'/>
-        <input type='text' name='year' placeholder='Year*'/> <br/>
         <input type='text' name='hash' placeholer='Password*' />
         <input type='submit'name='users' />
       </form>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TextField from '@material-ui/core/TextField'
+import './editprofile.css'
 
 export default class EditProfile extends Component {
   constructor (props) {

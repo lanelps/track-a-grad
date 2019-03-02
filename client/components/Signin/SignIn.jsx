@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './signin.css'
 // import {Redirect} from 'react-router-dom'
 // import {connect} from 'react-redux'
 // import {signin} from '../actions/auth'
@@ -29,7 +30,7 @@ class SignIn extends React.Component {
         <br/>
         <br/>
         <center>
-          <a href="/graduatedashboard"><button>SIGN IN</button></a>
+          <a href="/graduatefeed"><button>SIGN IN</button></a>
         </center>
       </React.Fragment>
     )

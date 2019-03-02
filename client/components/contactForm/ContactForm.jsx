@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactContactForm from 'react-mail-form'
 import './contact.css'
 
 export default function ContactForm () {
