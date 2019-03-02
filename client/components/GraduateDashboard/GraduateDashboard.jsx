@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import Nav from '../Nav/Nav'
-import DashBoardHeader from '../../../DashboardHeader/DashBoardHeader'
+import DashBoardHeader from '../DashboardHeader/DashBoardHeader'
 import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
 import './graduatedashboard.css'
@@ -23,7 +23,7 @@ class GraduateDashboard extends Component {
             <Nav />
             <DashBoardHeader />
             <Info name={this.props.profile.firstName} />
-            {/* <ContactForm /> */}
+            <ContactForm />
           </React.Fragment>
           : <div>Loading...</div>
         }
