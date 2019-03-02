@@ -17,13 +17,14 @@ class GraduateDashboard extends Component {
     return (
       <React.Fragment>
         <h1>Graduate Dashboard</h1>
-
         {(this.props.profile)
           ? <React.Fragment>
             <Nav />
-            <DashBoardHeader />
-            <Info name={this.props.profile.firstName} />
-            <ContactForm />
+            <div className="graduatedashboard">
+              <DashBoardHeader />
+              <Info name={this.props.profile.firstName} />
+              <ContactForm />
+            </div>
           </React.Fragment>
           : <div>Loading...</div>
         }

@@ -24,9 +24,7 @@ export default function DashBoardHeader () {
   return (
     <React.Fragment>
       {/* photo div */}
-      <div>
-        <img src={`${dummyData.profiles.profilePhoto}`} alt="student-profile-photo" height="42" width="42" />
-      </div>
+      <img src="../../images/avatars/avatar32.png" alt="student-profile-photo" height="100" />
       {/* information div */}
       <div>
         <h3>{dummyData.workStatuses.status}</h3>
