@@ -42,35 +42,11 @@ class SignIn extends React.Component {
 
     return (
       <React.Fragment>
-        <h2>SignIn</h2>
-        <h4>Email Field</h4>
-        <input id='email' name='email' placeholder='email' type="text" onChange={this.handleChange} value={email} />
-        <h4>Password Field</h4>
-        <input id='hash' name="hash" placeholder='password' onChange={this.handleChange} value={hash} />
-        {/* <a href="/graduatedashboard">Pass</a> */}
-        <button on Click={this.handleSubmit}>SIGN IN</button>
-
-        <center>
-          <h2>SignIn</h2>
-        </center>
-        <center>
-          <h4>Email Field</h4>
-          <input type="text"/>
-        </center>
-        <center>
-          <h4>Password Field</h4>
-          <input type="text"/>
-        </center>
-        <br/>
-        <br/>
-        <center>
-          <a href="/graduatefeed"><button>SIGN IN</button></a>
-        </center>
-        <div className="SignInBlock">
-          <div>
-            <img src="logo"/>
-            <div>
-              <span className="sub-title">Welcome to</span>
+        <div className="signinBlock">
+          <div className="container">
+            <img className="logo" src='../../images/trackergrad-logo.png' alt="tracker"/>
+            <div className="titleWrapper">
+              <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
             <div>
@@ -78,6 +54,7 @@ class SignIn extends React.Component {
                 id="standard-dense"
                 label="Email"
                 margin="dense"
+                className="input"
               />
               <TextField
                 id="standard-password-input"
@@ -85,15 +62,15 @@ class SignIn extends React.Component {
                 type="password"
                 autoComplete="current-password"
                 margin="normal"
+                className="input"
               />
             </div>
-            <div>
-              <a href="/graduatefeed">Login</a>
+            <div className="loginWrapper">
+              <a href="/graduatefeed" className="loginButton">Login</a>
             </div>
-
           </div>
         </div>
-
+        <img className="backgroundImage" src='../../images/background.png' alt="tracker"/>
       </React.Fragment>
     )
   }

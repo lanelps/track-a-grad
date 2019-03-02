@@ -4,26 +4,25 @@ import './nav.css'
 
 export default function Nav () {
   return (
-    <div>
-      {/* logo div */}
-      <div>
-        <h3>Track-a-grad</h3>
+    <React.Fragment>
+      <div className="navWrapper">
+        <div className="navlogo">
+          <img src='../../images/trackergrad-logo.png' alt="tracker"/>        </div>
+        <div className="menu">
+          <div>
+            <Link to="/">Sign In</Link>
+          </div>
+          <div>
+            <Link to="/registration">Register</Link>
+          </div>
+          <div>
+            <Link to="/graduatefeed">Graduate Feed</Link>
+          </div>
+          <div>
+            <Link to="/graduateprofile">Profile</Link>
+          </div>
+        </div>
       </div>
-      {/* navLinks div */}
-      <div className="NavBar">
-        <div className="SignIn">
-          <Link to="/">Sign In</Link>
-        </div>
-        <div className="Register">
-          <Link to="/registration">Register</Link>
-        </div>
-        <div className="GraduateFeed">
-          <Link to="/graduatefeed">Graduate Feed</Link>
-        </div>
-        <div className="Profile">
-          <Link to="/graduatefeed">Profile</Link>
-        </div>
-      </div>
-    </div>
+    </React.Fragment>
   )
 }

@@ -1,0 +1,51 @@
+.graduateprofile{
+  margin-top: 20px; 
+  padding: 40px 30px 60px 30px;
+  background-color: white;
+  width: 60%;
+  margin-left: 35px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.34);
+  border-radius: 18px;
+}
+
+.graduateprofile:hover{
+  background-color: lightgrey;
+}
+
+.profileHeader{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileHeader img{
+  display: inline-block
+}
+
+.info{
+  padding:20px;
+  display: inline-block
+}
+
+.statusBar h3{
+  display: inline-block;
+  padding: 15px;
+  font-family: IBMPlexSans-Light;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 2.50px;
+  background: #011548;
+  border-radius: 7.5px;
+  text-transform: uppercase;
+}
+.graduateprofile h3{
+  display: inline-block;
+  padding: 15px;
+  font-family: IBMPlexSans-Light;
+  font-size: 10px;
+  color: #FFFFFF;
+  letter-spacing: 2.50px;
+  background: #011548;
+  border-radius: 7.5px;
+  text-transform: uppercase; 
+  margin-right: 25px;
+}
