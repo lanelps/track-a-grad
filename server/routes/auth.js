@@ -1,15 +1,8 @@
 const express = require('express')
-const db = require('../db/auth')
+const db = require('../db/users')
 const router = express.Router()
 const token = require('../auth/token')
 const hash = require('../auth/hash')
-// const verifyJwt = require('express-jwt')
-
-// router.get(
-//   '/route-we-want-to-protect',
-//   verifyJwt({secret: process.env.JWT_SECRET}),
-//   routeWeWantToProtect
-// )
 
 router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkGraduate, token.issue)
@@ -41,7 +34,7 @@ function validateLogin (req, res, next) {
 }
 
 function checkGraduate (req, res, next) {
-  db.handleLogin(req.body)
+  db.getGraduateByEmail(req.body.email)
     .then(graduate => {
       if (graduate) res.locals.graduateId = graduate.id
       return graduate && hash.verify(graduate.hash, req.body.password)
