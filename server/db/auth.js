@@ -2,12 +2,15 @@ const connection = require('./index')
 const {generateHash} = require('../auth/hash')
 
 module.exports = {
-  createUser,
+  registerGraduate,
   signIn
 }
 
-function createUser ({email, password}, db = connection) {
-  return db('users').insert({email, hash: password})
+function registerGraduate ({email, password}, db = connection) {
+  return generateHash(password)
+    .then(hash => {
+      return db('users').insert({email, hash})
+    })
 }
 
 function signIn (email, db = connection) {
