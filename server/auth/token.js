@@ -10,7 +10,7 @@ module.exports = {
 }
 
 function issue (req, res) {
-  db.getUserByEmail(req.body.email)
+  db.getGraduateByEmail(req.body.email)
     .then(user => {
       const token = createToken(user, process.env.JWT_SECRET)
       res.json({
