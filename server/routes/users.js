@@ -24,4 +24,26 @@ router.get('/profiles/:id', (req, res) => {
     })
 })
 
+router.get('/profiles/:id/portfolio', (req, res) => {
+  const id = req.params.id
+  db.getPortfolio(id)
+    .then(profile => {
+      res.json(profile)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.put('/profiles/:id/update', (req, res) => {
+  const graduate = req.body
+  db.update(graduate)
+    .then(profile => {
+      res.json(profile)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
 module.exports = router
