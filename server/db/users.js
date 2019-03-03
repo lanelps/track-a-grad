@@ -3,7 +3,14 @@ const connection = require('./index')
 
 module.exports = {
   getGraduates,
-  getProfile
+  getProfile,
+  getUserByEmail
+}
+
+function getUserByEmail (email, db = connection) {
+  return db('users')
+    .where('email', email)
+    .first()
 }
 
 function getGraduates (status, db = connection) {
