@@ -8,7 +8,7 @@ exports.seed = function (knex, Promise) {
           profile_id: 1,
           role: '',
           organisation: '',
-          Location: '',
+          location: '',
           start_date: '',
           end_date: '',
           description: ''
