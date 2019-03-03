@@ -49,8 +49,9 @@ class SignIn extends Component {
               <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
-            <div>
-              <form>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+
                 <TextField
                   id="standard-dense"
                   label="Email"
@@ -67,11 +68,12 @@ class SignIn extends Component {
                   className="input"
                   value={password}
                 />
-              </form>
-            </div>
-            <div className="loginWrapper">
-              <a href="/graduatefeed" className="loginButton">Login</a>
-            </div>
+
+              </div>
+              <div className="loginWrapper">
+                <a href="/graduatefeed" className="loginButton">Login</a>
+              </div>
+            </form>
             <div className="link">
               <a href="/registration">Register</a>
             </div>
