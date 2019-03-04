@@ -2,7 +2,6 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import './editform.css'
-
 import {connect} from 'react-redux'
 import {editUserInformation} from '../../actions/users'
 
