@@ -2,8 +2,10 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import './editform.css'
+import {connect} from 'react-redux'
+import {editUserInformation} from '../../actions/users'
 
-export default class EditForm extends React.Component {
+class EditForm extends React.Component {
   state = {
     firstName: '',
     lastName: '',
@@ -20,11 +22,14 @@ export default class EditForm extends React.Component {
   };
   
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value});
+    this.setState({ [event.target.name]: event.target.value})
+    event.preventDefault()
   }
-
-  handleSubmit () {
-    this.setState({[event.target.name]: event.target.value})
+  
+  
+  handleSubmit = event => {
+    this.props.editUserInformation(this.state)
+    event.preventDefault()
   }
 
   render() {
@@ -62,9 +67,14 @@ export default class EditForm extends React.Component {
         </div>
         </div>
       </React.Fragment>
-    );
+    )
   }
 }
 
-// Need to link the update button to dispatch an action to the store to do a PUT request to the database on any fields that have been changed.
-// We will need to bring in the data that is in the database as the existing state otherwise the submit button may delete the existing state information.
+const mapDispatchToProps = (dispatch) => {
+  return {
+    editUserInformation: (state) => dispatch(editUserInformation(state))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(EditForm)
