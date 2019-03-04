@@ -5,12 +5,12 @@ import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signIn} from '../../actions/auth'
 
-class SignIn extends React.Component {
+class SignIn extends Component {
   constructor (props) {
     super(props)
     this.state = {
       email: '',
-      hash: ''
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -28,7 +28,7 @@ class SignIn extends React.Component {
     this.props.dispatch(signIn(user))
     this.setState({
       email: '',
-      hash: ''
+      password: ''
     })
     e.preventDefault()
   }
@@ -38,7 +38,7 @@ class SignIn extends React.Component {
       return <Redirect to='/graduatefeed' />
     }
 
-    const {email, hash} = this.state
+    const {email, password} = this.state
 
     return (
       <React.Fragment>
@@ -49,25 +49,31 @@ class SignIn extends React.Component {
               <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
-            <div>
-              <TextField
-                id="standard-dense"
-                label="Email"
-                margin="dense"
-                className="input"
-              />
-              <TextField
-                id="standard-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                margin="normal"
-                className="input"
-              />
-            </div>
-            <div className="loginWrapper">
-              <a href="/graduatefeed" className="loginButton">Login</a>
-            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+
+                <TextField
+                  id="standard-dense"
+                  label="Email"
+                  margin="dense"
+                  className="input"
+                  value={email}
+                />
+                <TextField
+                  id="standard-password-input"
+                  label="Password"
+                  type="password"
+                  autoComplete="current-password"
+                  margin="normal"
+                  className="input"
+                  value={password}
+                />
+
+              </div>
+              <div className="loginWrapper">
+                <a href="/graduatefeed" className="loginButton">Login</a>
+              </div>
+            </form>
             <div className="link">
               <a href="/registration">Register</a>
             </div>

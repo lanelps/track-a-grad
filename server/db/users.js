@@ -1,5 +1,5 @@
 const connection = require('./index')
-// const {generateHash} = require('../auth/hash')
+const {generateHash} = require('../auth/hash')
 
 module.exports = {
   getGraduates,
@@ -7,7 +7,15 @@ module.exports = {
   getPortfolio,
   updateUser,
   updateProfile,
-  updateMostRecentEmploymentDetails
+  updateMostRecentEmploymentDetails,
+  getGraduateByEmail,
+  registerGraduate
+}
+
+function getGraduateByEmail (email, db = connection) {
+  return db('users')
+    .where('email', email)
+    .first()
 }
 
 function getGraduates (status, db = connection) {
@@ -70,4 +78,14 @@ function updateMostRecentEmploymentDetails (graduate, db = connection) {
       end_date: graduate.mostRecentEndDate,
       description: graduate.mostRecentDescription
     })
+}
+
+function registerGraduate ({email, password}, db = connection) {
+  return getGraduateByEmail(email)
+    .then(graduate => {
+      if (graduate) { throw new Error('user exists') }
+    })
+    .then(() => generateHash(password)
+      .then(hash => db('users').insert({email, hash}))
+    )
 }

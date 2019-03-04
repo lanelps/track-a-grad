@@ -23,3 +23,10 @@ export function receiveProfile (profile) {
     profile: profile
   }
 }
+
+export function editSkills (skills) {
+  return {
+    type: 'EDIT_SKILLS',
+    skills
+  }
+}

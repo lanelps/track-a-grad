@@ -16,12 +16,3 @@ export function signIn (email, password) {
       })
   }
 }
-
-// export function signIn (email, password) {
-//   request
-//     .get(`${authUrl}/signin${email}`)
-//     .then(res => res.body)
-//     .catch(err => {
-//       if (err) throw Error('Email error')
-//     })
-// }
