@@ -15,7 +15,7 @@ const App = () => {
         <Route exact path="/graduatedashboard/:id" component={GraduateDashboard} />
         <Route exact path="/graduatefeed" component={GraduateFeed} />
         <Route exact path="/registration" component={Registration} />
-        <Route exact path="/form" component={EditForm} />
+        <Route exact path="/graduatedashboard/:id/form" component={EditForm} />
       </React.Fragment>
     </Router>
   )
