@@ -7,18 +7,25 @@ import {editUserInformation} from '../../actions/users'
 
 class EditForm extends React.Component {
   state = {
+    id: null,
+    email: '',
     firstName: '',
     lastName: '',
-    email: '',
+    profilePicture: '',
     cohort: '',
-    cv_link: '',
-    github: '',
+    year: '',
+    workStatus: '',
+    location: '',
+    cv: '',
+    description: '',
     skills: '',
-    peerReview: '',
-    workExperience: '',
-    education: '',
-    portfolio: '',
-    accomplishments: ''
+    githubUrl: '',
+    mostRecentRole: '',
+    mostRecentOrganisation: '',
+    mostRecentLocation: '',
+    mostRecentStartDate: '',
+    mostRecentEndDate: '',
+    mostRecentDescription: ''
   };
   
   handleChange = event => {
