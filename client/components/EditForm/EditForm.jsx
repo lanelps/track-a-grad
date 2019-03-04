@@ -18,7 +18,7 @@ class EditForm extends React.Component {
     workExperience: '',
     education: '',
     portfolio: '',
-        
+    accomplishments: ''
   };
   
   handleChange = event => {
