@@ -35,8 +35,7 @@ class Form extends React.Component {
     })
   }
 
-  handleSubmit (e) {
-    e.preventDefault()
+  handleSubmit () {
     this.props.submit(this.state)
   }
 
@@ -49,7 +48,7 @@ class Form extends React.Component {
             <span className='Title'><h1>Graduate Profile Page</h1> </span>
             <span className="subtitle">Edit Mode</span>
 
-            <form onSubmit={this.handleSubmit}>
+            <form action={`/graduatedashboard/${this.state.id}`} onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField id="standard-dense" margin="dense" className="input" name='firstName' value={this.state.firstName} onChange={this.handleChange} type='text' placeholder='First Name'/>
               <TextField id="standard-dense" margin="dense" className="input" name='lastName' value={this.state.lastName} onChange={this.handleChange} type='text' placeholder='Last Name'/> <br/>
