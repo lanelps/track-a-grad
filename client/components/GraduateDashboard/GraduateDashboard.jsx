@@ -24,7 +24,7 @@ class GraduateDashboard extends Component {
             <h1>Graduate Dashboard</h1>
             <div className="graduatedashboard">
               <DashBoardHeader
-                firstName={this.props.profile.firstName} LastName={this.props.profile.lastName} workStatus={this.props.profile.workStatus}
+                firstName={this.props.profile.firstName} lastName={this.props.profile.lastName} workStatus={this.props.profile.workStatus}
                 location={this.props.profile.location}
                 cohort={this.props.profile.cohort}
                 cv={this.props.profile.cv}
