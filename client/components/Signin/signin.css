@@ -1,18 +1,26 @@
+
 .signinBlock{
   position: absolute;
   float: left;
   height: 100vh;
   background-color: #011548;
-  width: 30%;
-  margin-left:80px;
+  width: 60%;
+  min-width: 400px;
+  margin-left:60px;
   z-index: 1;
+  color: white;
 }
+
+.input{
+  color: white;
+}
+
 span{
   display:block;
 }
 
 .container{
-  margin-left:50px;
+  margin-left:40px;
 }
 
 .logo{
@@ -83,3 +91,18 @@ letter-spacing: 0;
 need to make the textfield white
 need to make the image in the background
 need to make it responsive */
+
+/* tablets and desktop */
+@media only screen and (min-width: 768px) {
+
+}
+/* phones */
+@media only screen and (max-width: 767px) {
+
+}
+/* portrait phones */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .backgroundImage{
+    display: none;
+  }
+}

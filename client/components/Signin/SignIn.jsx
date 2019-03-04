@@ -37,7 +37,6 @@ class SignIn extends Component {
     if (this.props.SignedIn) {
       return <Redirect to='/graduatefeed' />
     }
-
     const {email, password} = this.state
 
     return (
