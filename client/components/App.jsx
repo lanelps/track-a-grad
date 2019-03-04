@@ -1,4 +1,5 @@
 import React from 'react'
+import Viewinfo from './EditProfile/Viewinfo'
 import EditProfile from './EditProfile/EditProfile'
 import SignIn from './Signin/SignIn'
 import GraduateDashboard from './GraduateDashboard/GraduateDashboard'
