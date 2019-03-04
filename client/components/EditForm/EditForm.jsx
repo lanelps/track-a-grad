@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import './editform.css'
 import {connect} from 'react-redux'
-import {getProfile} from '../../api/users'
+import {updateProfile} from '../../api/users'
 
 class EditForm extends React.Component {
   state = {
@@ -33,7 +33,7 @@ class EditForm extends React.Component {
   
   
   handleSubmit = event => {
-    this.props.updateProfile(this.state)
+    this.props.dispatch(updateProfile(this.state))
     event.preventDefault()
   }
 
