@@ -3,29 +3,27 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import './editform.css'
 import {connect} from 'react-redux'
-import {editUserInformation} from '../../actions/users'
+import {getProfile} from '../../api/users'
 
 class EditForm extends React.Component {
   state = {
-    id: null,
-    email: '',
-    firstName: '',
-    lastName: '',
-    profilePicture: '',
-    cohort: '',
-    year: '',
-    workStatus: '',
-    location: '',
-    cv: '',
-    description: '',
-    skills: '',
-    githubUrl: '',
-    mostRecentRole: '',
-    mostRecentOrganisation: '',
-    mostRecentLocation: '',
-    mostRecentStartDate: '',
-    mostRecentEndDate: '',
-    mostRecentDescription: ''
+    id: this.props.profile.id,
+    email: this.props.profile.email,
+    firstName: this.props.profile.firstName,
+    lastName: this.props.profile.lastName,
+    profilePicture: this.props.profile.profilePicture,
+    workStatus: this.props.profile.workStatus,
+    location: this.props.profile.location,
+    cv: this.props.profile.cv,
+    description: this.props.profile.description,
+    skills: this.props.profile.skills,
+    githubUrl: this.props.profile.githubUrl,
+    mostRecentRole: this.props.profile.mostRecentRole,
+    mostRecentOrganisation: this.props.profile.mostRecentOrganisation,
+    mostRecentLocation: this.props.profile.mostRecentLocation,
+    mostRecentStartDate: this.props.profile.mostRecentStartDate,
+    mostRecentEndDate: this.props.profile.mostRecentEndDate,
+    mostRecentDescription: this.props.profile.mostRecentDescription
   };
   
   handleChange = event => {
@@ -35,7 +33,7 @@ class EditForm extends React.Component {
   
   
   handleSubmit = event => {
-    this.props.editUserInformation(this.state)
+    this.props.updateProfile(this.state)
     event.preventDefault()
   }
 
@@ -78,10 +76,10 @@ class EditForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+function mapStateToProps (state) {
   return {
-    editUserInformation: (state) => dispatch(editUserInformation(state))
+    profile: state.profile
   }
 }
 
-export default connect(null, mapDispatchToProps)(EditForm)
+export default connect(mapStateToProps)(EditForm)

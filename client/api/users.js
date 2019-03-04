@@ -1,6 +1,8 @@
 import request from 'superagent'
 
-import {requestGraduates, receiveGraduates, requestProfile, receiveProfile} from '../actions/users'
+import {requestGraduates, receiveGraduates} from '../actions/users'
+
+import {requestProfile, receiveProfile, editProfile} from '../actions/profile'
 
 const usersUrl = 'http://localhost:3000/api/v1/users'
 
@@ -12,7 +14,7 @@ export function getGraduates () {
         dispatch(receiveGraduates(res.body))
       })
       .catch(err => {
-        if (err) throw Error('Connot get graduates')
+        if (err) throw Error('Cannot get graduates')
       })
   }
 }
@@ -26,7 +28,20 @@ export function getProfile (id) {
         dispatch(receiveProfile(res.body))
       })
       .catch(err => {
-        if (err) throw Error('Connot get profile')
+        if (err) throw Error('Cannot get profile')
+      })
+  }
+}
+
+export function updateProfile (state) {
+  return (dispatch) => {
+    const id = state.id
+    dispatch(editProfile())
+    return request
+      .put(`${usersUrl}/profiles/${id}`)
+      .then(() => getProfile(id))
+      .catch(err => {
+        if (err) throw Error('Cannot update profile')
       })
   }
 }

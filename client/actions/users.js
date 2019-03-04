@@ -11,22 +11,8 @@ export function receiveGraduates (graduates) {
   }
 }
 
-export function requestProfile () {
+export function editProfile () {
   return {
-    type: 'REQUEST_PROFILE'
-  }
-}
-
-export function receiveProfile (profile) {
-  return {
-    type: 'RECEIVE_PROFILE',
-    profile: profile
-  }
-}
-
-export function editUserInformation (state) {
-  return {
-    type: 'EDIT_USER_INFORMATION',
-    state
+    type: 'EDIT_PROFILE'
   }
 }
