@@ -27,8 +27,7 @@ class SignIn extends Component {
     const user = this.state
     this.props.dispatch(signIn(user))
     this.setState({
-      email: '',
-      password: ''
+      [e.target.name]: e.target.value
     })
     e.preventDefault()
   }
@@ -57,7 +56,9 @@ class SignIn extends Component {
                   label="Email"
                   margin="dense"
                   className="input"
-                  value={email}
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
                 />
                 <TextField
                   id="standard-password-input"
@@ -66,7 +67,9 @@ class SignIn extends Component {
                   autoComplete="current-password"
                   margin="normal"
                   className="input"
-                  value={password}
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
                 />
 
               </div>
