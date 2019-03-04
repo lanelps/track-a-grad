@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import TextField from '@material-ui/core/TextField'
 import './signin.css'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signIn} from '../../actions/auth'
 
@@ -58,35 +57,28 @@ class SignIn extends Component {
             </div>
             <form>
               <div>
+                <label className="field a-field a-field_a2 page__field">
+                  <input className="field__input a-field__input" placeholder=" " name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
+                  <span className="a-field__label-wrap">
+                    <span className="a-field__label">Email</span>
+                  </span>
+                </label>
 
-                <TextField
-                  id="standard-dense"
-                  label="Email"
-                  margin="dense"
-                  className="input"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  id="standard-password-input"
-                  label="Password"
-                  type="password"
-                  autoComplete="current-password"
-                  margin="normal"
-                  className="input"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                />
+                <label className="field a-field a-field_a2 page__field">
+                  <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.passwordl} onChange={this.handleChange} required />
+                  <span className="a-field__label-wrap">
+                    <span className="a-field__label">Password</span>
+                  </span>
+                </label>
 
               </div>
               <div className="loginWrapper">
                 <button name='sign-in-button' className="loginButton" type="submit" onClick={this.handleSubmit} >Login</button>
               </div>
             </form>
+            <div className="space"></div>
             <div className="link">
-              <a href="/registration">Register</a>
+              <Link to="/registration">Register</Link>
             </div>
           </div>
         </div>
