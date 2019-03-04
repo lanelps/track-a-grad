@@ -16,25 +16,29 @@ class GraduateFeed extends Component {
   render () {
     return (
       <div>
+
         <Nav />
         <div className="spacer"></div>
         <h1>Graduate Feed</h1>
         {this.props.graduates.map((graduate) => {
           return (
-            <Link key={graduate.id} to={`/graduatedashboard/${graduate.id}`} style={{textDecoration: 'none'}}>
-              <GraduateProfile
-                key={graduate.id}
-                firstName={graduate.firstName}
-                lastName={graduate.lastName}
-                profilePicture={graduate.profilePicture}
-                location={graduate.location}
-                cv={graduate.cv}
-                description={graduate.description}
-                workStatus={graduate.workStatus}
+            <React.Fragment key={graduate.id}>
+              <Link key={graduate.id} to={`/graduatedashboard/${graduate.id}`} style={{textDecoration: 'none'}}>
+                <GraduateProfile
+                  key={graduate.id}
+                  id={graduate.id}
+                  firstName={graduate.firstName}
+                  lastName={graduate.lastName}
+                  profilePicture={graduate.profilePicture}
+                  location={graduate.location}
+                  cv={graduate.cv}
+                  description={graduate.description}
+                  workStatus={graduate.workStatus}
 
-              // skills={graduate.skills}
-              />
-            </Link>
+                  // skills={graduate.skills}
+                />
+              </Link>
+            </React.Fragment>
           )
         })}
       </div>
