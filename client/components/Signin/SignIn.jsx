@@ -21,15 +21,23 @@ class SignIn extends Component {
     this.setState({
       [name]: value
     })
+    e.preventDefault()
   }
 
+  // handleSubmit (e) {
+  //   const {name, value} = this.state
+  //   console.log(e)
+  //   e.preventDefault()
+  //   this.props.dispatch(signIn(user))
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  //   console.log(e)
+  // }
   handleSubmit (e) {
-    const user = this.state
-    this.props.dispatch(signIn(user))
-    this.setState({
-      [e.target.name]: e.target.value
-    })
     e.preventDefault()
+    const {email, password} = this.state
+    this.props.dispatch(signIn(email, password)) // TODO: callback - confirmSuccess
   }
 
   render () {
@@ -37,7 +45,7 @@ class SignIn extends Component {
       return <Redirect to='/graduatefeed' />
     }
 
-    const {email, password} = this.state
+    // const {email, password} = this.state
 
     return (
       <React.Fragment>
@@ -48,7 +56,7 @@ class SignIn extends Component {
               <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <div>
 
                 <TextField
@@ -74,7 +82,7 @@ class SignIn extends Component {
 
               </div>
               <div className="loginWrapper">
-                <button name='sign-in-button' className="loginButton" onClick={this.handleSubmit} >Login</button>
+                <button name='sign-in-button' className="loginButton" type="submit" onClick={this.handleSubmit} >Login</button>
               </div>
             </form>
             <div className="link">
