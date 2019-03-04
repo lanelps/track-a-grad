@@ -65,7 +65,7 @@ class SignIn extends Component {
                 </label>
 
                 <label className="field a-field a-field_a2 page__field">
-                  <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.passwordl} onChange={this.handleChange} required />
+                  <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.password} onChange={this.handleChange} required />
                   <span className="a-field__label-wrap">
                     <span className="a-field__label">Password</span>
                   </span>
