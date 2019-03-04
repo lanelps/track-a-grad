@@ -1,4 +1,5 @@
 import React from 'react'
+import Viewinfo from './EditProfile/Viewinfo'
 import EditProfile from './EditProfile/EditProfile'
 import SignIn from './Signin/SignIn'
 import GraduateDashboard from './GraduateDashboard/GraduateDashboard'
@@ -16,6 +17,7 @@ const App = () => {
         <Route exact path="/graduatefeed" component={GraduateFeed} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/edit" component={EditProfile} />
+        <Route exact path="/viewprofile" component={Viewinfo} />
       </React.Fragment>
     </Router>
   )
