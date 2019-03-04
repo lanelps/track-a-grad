@@ -36,11 +36,13 @@ router.get('/profiles/:id/portfolio', (req, res) => {
 })
 
 router.put('/profiles/:id/update', (req, res) => {
+  const id = req.params.id
   const graduate = req.body
-  db.update(graduate)
-    .then(profile => {
-      res.json(profile)
-    })
+  db.updateUser(graduate)
+    .then(() => db.updateProfile(graduate))
+    .then(() => db.updateMostRecentEmploymentDetails(graduate))
+    // .then(res.redirect(`./profiles/${id}`))
+    .then(res.redirect('/'))
     .catch(err => {
       res.status(500).send(err.message)
     })

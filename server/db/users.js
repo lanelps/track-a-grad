@@ -5,7 +5,9 @@ module.exports = {
   getGraduates,
   getProfile,
   getPortfolio,
-  update
+  updateUser,
+  updateProfile,
+  updateMostRecentEmploymentDetails
 }
 
 function getGraduates (status, db = connection) {
@@ -34,13 +36,6 @@ function getPortfolio (id, db = connection) {
     .select()
 }
 
-function update (graduate) {
-  updateUser(graduate)
-    .then(updateProfile(graduate))
-    .then(updateMostRecentEmployment(graduate))
-    // .then(getPortfolio(graduate.id))
-}
-
 function updateUser (graduate, db = connection) {
   return db('users')
     .where('id', graduate.id)
@@ -64,7 +59,7 @@ function updateProfile (graduate, db = connection) {
     })
 }
 
-function updateMostRecentEmployment (graduate, db = connection) {
+function updateMostRecentEmploymentDetails (graduate, db = connection) {
   return db('most_recent_employment_details')
     .where('profile_id', graduate.id)
     .update({
