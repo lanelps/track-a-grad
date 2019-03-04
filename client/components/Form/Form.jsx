@@ -3,9 +3,6 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
-import {Redirect} from 'react-router-dom'
-import {updateProfile} from '../../api/users'
-
 class Form extends React.Component {
   constructor (props) {
     super(props)
@@ -29,6 +26,7 @@ class Form extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
@@ -38,15 +36,8 @@ class Form extends React.Component {
   }
 
   handleSubmit (e) {
-    this.props.dispatch(updateProfile(this.state))
-      .then(
-        this.renderRedirect()
-      )
-    event.preventDefault()
-  }
-
-  renderRedirect () {
-    return <Redirect to='/path' />
+    e.preventDefault()
+    this.props.submit(this.state)
   }
 
   render () {
@@ -85,7 +76,6 @@ class Form extends React.Component {
               <TextField id="standard-dense" margin="dense" className="input" name='mostRecentEndDate' value={this.state.mostRecentEndDate} onChange={this.handleChange} type='text' placeholder='When did you finish?'/>
               <TextField id="standard-dense" margin="dense" className="input" name='mostRecentDescription' value={this.state.mostRecentDescription} onChange={this.handleChange} type='text' placeholder='Tell us about your job role?'/>
 
-              {/* <Button variant="outlined" color="primary" onClick={this.state.handleSubmit}>Update Profile </Button> */}
               <input type="submit" value="Submit" />
             </form>
           </div>

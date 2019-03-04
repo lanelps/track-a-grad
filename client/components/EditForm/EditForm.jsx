@@ -1,19 +1,27 @@
 import React from 'react'
 import './editform.css'
 import {connect} from 'react-redux'
-import {getProfile} from '../../api/users'
+import {getProfile, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
 
 class EditForm extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
   componentDidMount () {
     this.props.dispatch(getProfile(this.props.match.params.id))
+  }
+
+  handleSubmit (profile) {
+    this.props.dispatch(updateProfile(profile))
   }
   render () {
     return (
       <React.Fragment>
         {
           (this.props.profile)
-            ? <Form profile={this.props.profile}/> : <div>Loading...</div>
+            ? <Form profile={this.props.profile} submit={this.handleSubmit}/> : <div>Loading...</div>
         }
       </React.Fragment>
     )

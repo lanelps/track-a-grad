@@ -39,9 +39,13 @@ export function updateProfile (state) {
     dispatch(editProfile())
     return request
       .put(`${usersUrl}/profiles/${id}`)
+      .send(state)
       .then(() => getProfile(id))
       .catch(err => {
-        if (err) throw Error('Cannot update profile')
+        if (err) {
+          console.error(err)
+          throw Error('Cannot update profile')
+        }
       })
   }
 }
