@@ -10,9 +10,10 @@ router.post('/login', validateLogin, checkGraduate, token.issue)
 
 // match user email or id
 router.get(
-  `/graduatedashboard/${userId}`,
-  verifyJwt({secret: process.env.JWT_SECRET}),
-  graduatedashboard
+  // `/graduatedashboard/${userId}`,
+  '/graduatedashboard:id',
+  verifyJwt({secret: process.env.JWT_SECRET})
+  // graduatedashboard
 )
 
 function register (req, res, next) {
