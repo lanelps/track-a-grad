@@ -3,9 +3,17 @@ const db = require('../db/users')
 const router = express.Router()
 const token = require('../auth/token')
 const hash = require('../auth/hash')
+const verifyJwt = require('express-jwt')
 
 router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkGraduate, token.issue)
+
+// match user email or id
+router.get(
+  `/graduatedashboard/${userId}`,
+  verifyJwt({secret: process.env.JWT_SECRET}),
+  graduatedashboard
+)
 
 function register (req, res, next) {
   db.registerGraduate(req.body)

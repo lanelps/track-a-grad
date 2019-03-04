@@ -2,8 +2,6 @@ import {showError, clearError} from './error'
 import request from 'superagent'
 
 import {saveAuthToken, logOff as logOffUser} from '../utils/auth'
-export const LOG_OFF = 'LOG_OFF'
-export const REQUEST_SIGNIN = 'REQUEST_SIGNIN'
 
 export function requestRegister () {
   return {
@@ -19,7 +17,7 @@ export function receiveRegister () {
 
 export function requestSignIn () {
   return {
-    type: REQUEST_SIGNIN
+    type: 'REQUEST_SIGNIN'
   }
 }
 
@@ -46,7 +44,7 @@ const receiveGraduateDetails = (userDetails) => {
 export const logOff = () => {
   logOffUser()
   return {
-    type: LOG_OFF
+    type: 'LOG_OFF'
   }
 }
 
@@ -83,7 +81,7 @@ export function signIn (email, password, confirmSuccess) {
 export function getGraduateDetails (userId) {
   return (dispatch) => {
     dispatch(requestGraduateDetails())
-      .request('get', `/user/${userId}`)
+    request('get', `/graduatedashboard/${userId}`)
       .then(res => {
         dispatch(receiveGraduateDetails(res.body))
         dispatch(clearError())
