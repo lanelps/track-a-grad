@@ -74,7 +74,7 @@ class SignIn extends Component {
 
               </div>
               <div className="loginWrapper">
-                <a href="/graduatefeed" className="loginButton">Login</a>
+                <button name='sign-in-button' className="loginButton" onClick={this.handleSubmit} >Login</button>
               </div>
             </form>
             <div className="link">
