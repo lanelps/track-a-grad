@@ -6,7 +6,18 @@ class EditProfile extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      skills: ''
+        firstName: '',
+        lastName: '',
+        email: '',
+        cohort: '',
+        cv_link: '',
+        github: '',
+        skills: '',
+        peerReview: '',
+        workExperience: '',
+        education: '',
+        portfolio: '',
+            
     }
   }
 handleChange = event => {
@@ -16,7 +27,7 @@ handleChange = event => {
 
 
 handleSubmit = event => {
-  this.props.editSkills(this.state.skills)
+  this.props.editSkills(this.state)
   event.preventDefault()
 }
   render () {
@@ -25,6 +36,7 @@ handleSubmit = event => {
         <div>
           <form>
             <input name='skills' value={this.state.skills} onChange={this.handleChange}/>
+            <input name='firstName' value={this.state.skills} onChange={this.handleChange}/>
             <button onClick={this.handleSubmit}>Submit</button>
           </form>
         </div>
@@ -35,7 +47,7 @@ handleSubmit = event => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    editSkills: (skills) => dispatch(editSkills(skills))
+    editSkills: (state) => dispatch(editSkills(state))
   }
 }
 

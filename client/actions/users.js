@@ -24,9 +24,9 @@ export function receiveProfile (profile) {
   }
 }
 
-export function editSkills (skills) {
+export function editSkills (state) {
   return {
     type: 'EDIT_SKILLS',
-    skills
+    state
   }
 }
