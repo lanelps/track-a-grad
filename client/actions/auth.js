@@ -1,7 +1,7 @@
 import {showError, clearError} from './error'
 import request from 'superagent'
 
-// import {saveAuthToken, logOff as logOffUser} from '../api/auth'
+import {saveAuthToken, logOff as logOffUser} from '../utils/auth'
 export const LOG_OFF = 'LOG_OFF'
 export const REQUEST_SIGNIN = 'REQUEST_SIGNIN'
 
@@ -44,7 +44,7 @@ const receiveGraduateDetails = (userDetails) => {
 }
 
 export const logOff = () => {
-  // logOffUser()
+  logOffUser()
   return {
     type: LOG_OFF
   }
