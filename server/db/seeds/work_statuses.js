@@ -5,8 +5,11 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('work_statuses').insert([
         {id: 1,
-          status: 'useless'
-        }
+          status: 'Available'
+        },
+        {id: 2,
+          status: 'Employed'
+        },
       ])
     })
 }

@@ -15,7 +15,7 @@ exports.seed = function (knex, Promise) {
         {id: 9, skill: 'semantic-UI'},
         {id: 10, skill: 'Express.js'},
         {id: 11, skill: 'Figma'},
-        {id: 12, skill: 'Workflow'}
+        {id: 12, skill: 'Webflow'}
       ])
     })
 }
