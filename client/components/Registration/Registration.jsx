@@ -42,7 +42,7 @@ class Register extends React.Component {
                 <span className="a-field__label-wrap">
                   <span className="a-field__label">Last Name</span>
                 </span>
-              </label>
+              </label> 
               <label className="field a-field a-field_a2 page__field">
                 <input className="field__input a-field__input" placeholder=" " name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
                 <span className="a-field__label-wrap">
