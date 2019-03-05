@@ -53,6 +53,7 @@ export default class Nav extends Component {
 />
         </Button>
         <Menu
+        className="navMenu"
           id="simple-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}

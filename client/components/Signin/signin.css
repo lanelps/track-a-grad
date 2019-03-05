@@ -55,6 +55,8 @@ letter-spacing: 0;
   border: 1px solid #F39D58;
   border-radius: 10px;
   margin-bottom: 50px;
+  background-color: transparent;
+
 }
 
 .loginWrapper{
@@ -313,3 +315,18 @@ Input Color
 need to make the textfield white
 need to make the image in the background
 need to make it responsive */
+
+@media (min-width: 480px) and (orientation: landscape)
+ {
+  body {
+    background-color: olive;
+  }
+  .signinBlock{
+    position: absolute;
+    height: 100vh;
+    background-color: #011548;
+    width: 100%;
+    margin-left:80px;
+    z-index: 1;
+  }
+}

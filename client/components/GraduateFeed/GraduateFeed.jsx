@@ -19,7 +19,7 @@ class GraduateFeed extends Component {
 
         <Nav />
         <div className="spacer"></div>
-        <h1>Graduate Feed</h1>
+        <h1 className="gradDashboard-title">Welcome to Trackergrad</h1>
         {this.props.graduates.map((graduate) => {
           return (
             <React.Fragment key={graduate.id}>
