@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../db/users')
+const token = require('../auth/token')
 
 router.get('/', (req, res) => {
   const status = 'true'

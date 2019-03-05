@@ -20,16 +20,24 @@ class SignIn extends Component {
     this.setState({
       [name]: value
     })
+    e.preventDefault()
   }
 
+  // handleSubmit (e) {
+  //   const {name, value} = this.state
+  //   console.log(e)
+  //   e.preventDefault()
+  //   this.props.dispatch(signIn(user))
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  //   console.log(e)
+  // }
   handleSubmit (e) {
-    const user = this.state
-    this.props.dispatch(signIn(user))
-    this.setState({
-      email: '',
-      password: ''
-    })
     e.preventDefault()
+    const {email, password} = this.state
+    const goToGraduateDashboard = userId => this.props.history.push(`/graduatedashboard/${userId}/form`)
+    this.props.dispatch(signIn(email, password, goToGraduateDashboard)) // TODO: callback - confirmSuccess
   }
 
   render () {
@@ -37,7 +45,7 @@ class SignIn extends Component {
       return <Redirect to='/graduatefeed' />
     }
 
-    const {email, password} = this.state
+    // const {email, password} = this.state
 
     return (
       <React.Fragment>
@@ -48,7 +56,7 @@ class SignIn extends Component {
               <span className="subtitle">Welcome to</span>
               <span className="title">Your GradProfile</span>
             </div>
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <div>
                 <label className="field a-field a-field_a2 page__field">
                   <input className="field__input a-field__input" placeholder=" " name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
@@ -58,7 +66,7 @@ class SignIn extends Component {
                 </label>
 
                 <label className="field a-field a-field_a2 page__field">
-                  <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.passwordl} onChange={this.handleChange} required />
+                  <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.password} onChange={this.handleChange} required />
                   <span className="a-field__label-wrap">
                     <span className="a-field__label">Password</span>
                   </span>
@@ -66,7 +74,7 @@ class SignIn extends Component {
 
               </div>
               <div className="loginWrapper">
-                <a href="/graduatefeed" className="loginButton">Login</a>
+                <button name='sign-in-button' className="loginButton" type="submit" onClick={this.handleSubmit} >Login</button>
               </div>
             </form>
             <div className="space"></div>
