@@ -66,7 +66,7 @@ class Form extends React.Component {
           <div className="titleWrapper">
             <span className='Title'><h1>Graduate Profile Page</h1> </span>
             <span className="subtitle">Edit Mode</span>
-            {/* action={`/graduatedashboard/${this.state.id}`} */}
+
             <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField id="standard-dense" margin="dense" className="input" name='firstName' value={this.state.firstName} onChange={this.handleChange} type='text' placeholder='First Name'/>
@@ -75,9 +75,8 @@ class Form extends React.Component {
 
               <label>Work Status: </label>
               <select name='workStatusId' onChange={this.statusChange} value={this.state.workStatusId} >
-                <option value='1'>hey</option>
-                <option value='2'>hi</option>
-                <option value='3'selected>ho</option>
+                <option value='1'>Available</option>
+                <option value='2'>Unavailable</option>
               </select>
               <br />
 
