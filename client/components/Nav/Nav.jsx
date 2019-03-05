@@ -57,9 +57,9 @@ export default class Nav extends Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
-          <MenuItem onClick={this.handleClose}><Link to="/">Sign In</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to="/login">Sign In</Link></MenuItem>
           <MenuItem onClick={this.handleClose}><Link to="/registration">Register</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}> <Link to="/graduatefeed">Graduate Feed</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}> <Link to="/">Graduate Feed</Link></MenuItem>
           <MenuItem onClick={this.handleClose}><Link to="/graduateprofile">Profile</Link></MenuItem>
           
         </Menu>

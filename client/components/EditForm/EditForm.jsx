@@ -3,7 +3,8 @@ import './editform.css'
 import {connect} from 'react-redux'
 import {getProfile, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
-import {Link} from 'react-router-dom'
+import InvalidLogIn from '../Signin/InValidLogIn'
+import InValidLogIn from '../Signin/InValidLogIn';
 
 class EditForm extends React.Component {
   constructor (props) {
@@ -26,10 +27,7 @@ class EditForm extends React.Component {
           (this.props.profile && this.props.profile.id === this.props.signIn.userId)
             ? <Form profile={this.props.profile}
               submit={this.handleSubmit}/>
-            : <div>
-              <h2>InValid Login Credentials</h2>
-              <Link to="/login">Try logging in again</Link>
-            </div>
+            : <InValidLogIn />
         }
       </React.Fragment>
     )
