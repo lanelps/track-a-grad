@@ -1,9 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
-import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-
+import './form.css'
 class Form extends React.Component {
   constructor(props) {
     super(props)
@@ -69,10 +68,8 @@ class Form extends React.Component {
           />
           <div className="titleWrapper">
             <span className="Title">
-              <h1>Graduate Profile Page</h1>{' '}
+              <h1>Edit Profile</h1>
             </span>
-            <span className="subtitle">Edit Mode</span>
-
             <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField
@@ -234,7 +231,7 @@ class Form extends React.Component {
                 type="text"
                 placeholder="Description"
               />
-              <input type="submit" value="Submit" />
+              <input className="submit" type="submit" value="Submit" />
             </form>
           </div>
         </div>
