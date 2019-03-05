@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './info.css'
 
 export default function Info (props) {
@@ -7,61 +8,29 @@ export default function Info (props) {
       <div>
         <div className="info-section">
           <div className="align">
-            <h2>Skills</h2>
+            <h2>Competencies</h2>
             <div className="edit">
 
             </div>
           </div>
-          <p>Heres them skills yo</p>
-        </div>
-        <div className="info-section">
-          <div className="align">
-            <h2>Pair Review</h2>
-            <div className="edit">
-
-            </div>
-          </div>
-          <p>Evandah is alright I guess</p>
+          <p>{props.skills}</p>
         </div>
 
         <div className="info-section">
           <div className="align">
-            <h2>Work Experience</h2>
+            <h2>Most Recent Employment Details</h2>
             <div className="edit">
 
             </div>
           </div>
-          <p>Maccas</p>
-        </div>
-
-        <div className="info-section">
-          <div className="align">
-            <h2>Accomplishments</h2>
-            <div className="edit">
-
-            </div>
-          </div>
-          <p>Excellence in being a ho</p>
-        </div>
-
-        <div className="info-section">
-          <div className="align">
-            <h2>Education</h2>
-            <div className="edit">
-
-            </div>
-          </div>
-          <p>Pakuranga high</p>
-        </div>
-
-        <div className="info-section">
-          <div className="align">
-            <h2>Portfolio</h2>
-            <div className="edit">
-
-            </div>
-          </div>
-          <p>www.lmao.com</p>
+          <p>
+            {props.mostRecentOrganisation}
+            {props.mostRecentRole}
+            {props.mostRecentLocation}
+            {props.mostRecentStartDate}
+            {props.mostRecentEndDate}
+            {props.mostRecentDescription}
+          </p>
         </div>
 
         <div className="info-section">
@@ -71,7 +40,7 @@ export default function Info (props) {
 
             </div>
           </div>
-          <p>www.github.lmao.com</p>
+          <p>{props.githubUrl}</p>
         </div>
       </div>
     </React.Fragment>

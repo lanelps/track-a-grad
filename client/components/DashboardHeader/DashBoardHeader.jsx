@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './dashboardheader.css'
 
 export default function DashBoardHeader (props) {
@@ -22,8 +23,7 @@ export default function DashBoardHeader (props) {
           </div>
         </div>
       </div>
-      {/* <p>{props.description}</p> */}
-      <p>I am a creative UI / UX designer, with a strong skillset in user-centric design, full-stack development, and team management. I am passionate about translating innovative product visions into beautiful designs to help reach market successfully.</p>
+      <p>{props.description}</p>
     </React.Fragment>
   )
 }
