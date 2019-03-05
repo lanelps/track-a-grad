@@ -36,7 +36,8 @@ class SignIn extends Component {
   handleSubmit (e) {
     e.preventDefault()
     const {email, password} = this.state
-    this.props.dispatch(signIn(email, password)) // TODO: callback - confirmSuccess
+    const goToGraduateDashboard = userId => this.props.history.push(`/graduatedashboard/${userId}/form`)
+    this.props.dispatch(signIn(email, password, goToGraduateDashboard)) // TODO: callback - confirmSuccess
   }
 
   render () {

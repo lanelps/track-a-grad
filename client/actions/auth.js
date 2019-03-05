@@ -59,7 +59,7 @@ export function signIn (email, password, confirmSuccess) {
         dispatch(receiveSignIn(res.body))
         dispatch(getGraduateDetails(token.id))
         dispatch(clearError())
-        confirmSuccess()
+        confirmSuccess(token.id)
       })
       .catch(err => {
         if (err.response) {
