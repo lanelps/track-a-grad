@@ -80,7 +80,7 @@ function updateMostRecentEmploymentDetails (graduate, db = connection) {
     })
 }
 
-function registerGraduate ({email, password}, db = connection) {
+function registerGraduate ({email, password, firstName, lastName}, db = connection) {
   return getGraduateByEmail(email)
     .then(graduate => {
       if (graduate) { throw new Error('user exists') }
@@ -88,7 +88,5 @@ function registerGraduate ({email, password}, db = connection) {
     .then(() => generateHash(password))
     .then(hash => db('users').insert({email, hash, boolean: true}))
     .then(userId => userId[0])
-    .then(userId => db('profiles').insert({'user_id': userId}))
-    // .then(firstName => db('profiles').insert({'first_name': firstName}))
-    // .finally(lastName => db('profiles').insert({'last_name': lastName}))
+    .then(userId => db('profiles').insert({'user_id': userId, 'first_name': firstName, 'last_name': lastName}))
 }
