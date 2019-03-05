@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../db/users')
+const token = require('../auth/token')
 
 router.get('/', (req, res) => {
   const status = 'true'
@@ -19,6 +20,27 @@ router.get('/profiles/:id', (req, res) => {
     .then(profile => {
       res.json(profile)
     })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.get('/profiles/:id/portfolio', (req, res) => {
+  const id = req.params.id
+  db.getPortfolio(id)
+    .then(profile => {
+      res.json(profile)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.put('/profiles/:id', (req, res) => {
+  const graduate = req.body
+  db.updateUser(graduate)
+    .then(() => db.updateProfile(graduate))
+    .then(() => db.updateMostRecentEmploymentDetails(graduate))
     .catch(err => {
       res.status(500).send(err.message)
     })

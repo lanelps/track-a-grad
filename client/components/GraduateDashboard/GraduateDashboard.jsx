@@ -5,6 +5,7 @@ import DashBoardHeader from '../DashboardHeader/DashBoardHeader'
 import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
 import './graduatedashboard.css'
+import {Link} from 'react-router-dom'
 
 import {connect} from 'react-redux'
 import {getProfile} from '../../api/users'
@@ -33,6 +34,7 @@ class GraduateDashboard extends Component {
               />
               Contact Form
               <ContactForm />
+              <Link key={this.props.profile.id} to={`/graduatedashboard/${this.props.profile.id}/form`}>Edit</Link>
             </div>
           </React.Fragment>
           : <div>Loading...</div>
@@ -42,7 +44,7 @@ class GraduateDashboard extends Component {
     )
   }
 }
-
+ 
 function mapStateToProps (state) {
   return {
     profile: state.profile

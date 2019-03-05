@@ -7,7 +7,7 @@ export default function Nav () {
     <React.Fragment>
       <div className="navWrapper">
         <div className="navlogo">
-        <img src='../../images/trackergrad-logo.png' alt="tracker"/>        </div>
+          <img src='../../images/trackergrad-logo.png' alt="tracker"/>        </div>
         <div className="menu">
           <div>
             <Link to="/">Sign In</Link>
