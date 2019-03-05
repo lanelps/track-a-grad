@@ -1,14 +1,23 @@
 import React from 'react'
 import './registration.css'
-import TextField from '@material-ui/core/TextField'
+import {Link} from 'react-router-dom'
 
 class Register extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      firstName: '',
+      lastName: '',
       email: '',
       password: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange (e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
 
   render () {
@@ -17,41 +26,40 @@ class Register extends React.Component {
         <div className="signinBlock">
           <div className="container">
             <img className="logo" src='../../images/trackergrad-logo.png' alt="tracker"/>
-            <div className="titleWrapper">
+            <div className="registertitleWrapper">
               <span className="subtitle">Ready to</span>
               <span className="title">Register?</span>
             </div>
             <div>
-              <TextField
-                id="standard-dense"
-                label="First name"
-                margin="dense"
-                className="input"
-              />
-              <TextField
-                id="standard-dense"
-                label="Last name"
-                margin="dense"
-                className="input"
-              />
-              <TextField
-                id="standard-dense"
-                label="Email"
-                margin="dense"
-                className="input"
-              />
-              <TextField
-                id="standard-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                margin="normal"
-                className="input"
-              />
+              <label className="field a-field a-field_a2 page__field">
+                <input className="field__input a-field__input" placeholder=" " name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required />
+                <span className="a-field__label-wrap">
+                  <span className="a-field__label">First Name</span>
+                </span>
+              </label>
+              <label className="field a-field a-field_a2 page__field">
+                <input className="field__input a-field__input" placeholder=" " name="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required />
+                <span className="a-field__label-wrap">
+                  <span className="a-field__label">Last Name</span>
+                </span>
+              </label>
+              <label className="field a-field a-field_a2 page__field">
+                <input className="field__input a-field__input" placeholder=" " name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
+                <span className="a-field__label-wrap">
+                  <span className="a-field__label">Email</span>
+                </span>
+              </label>
+              <label className="field a-field a-field_a2 page__field">
+                <input className="field__input a-field__input" placeholder=" " name="password" type="email" value={this.state.password} onChange={this.handleChange} required />
+                <span className="a-field__label-wrap">
+                  <span className="a-field__label">Password</span>
+                </span>
+              </label>
             </div>
-            <div className="loginWrapper">
-              <a href="/graduatefeed" className="loginButton">Register</a>
+            <div className="RegisterWrapper">
+              <Link to="/graduatefeed" className="loginButton">Register</Link>
             </div>
+            <div className="space"></div>
             <div className="link">
               <a href="/">Login</a>
             </div>
@@ -64,5 +72,3 @@ class Register extends React.Component {
 }
 
 export default Register
-// MVP 1 - Needs to redirect onclick to the login page so that they can come into their editable profile via the login screen.
-// MVP 4 - If administrator section is acheived. This will require a redirect onclick to a validation page notifying the user that their profile will be validated by an EDA administrator between 24-48 hours and notify the administrator that a new user has registered.
