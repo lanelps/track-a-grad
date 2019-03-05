@@ -11,21 +11,22 @@ import './nav.css'
 export default class Nav extends Component {
   state = {
     anchorEl: null,
-    open: false
-  };
+    isOpen: false
+  }
 
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
-  };
+  }
 
   handleClose = () => {
     this.setState({ anchorEl: null });
-  };
+  }
+
   handleHamburgerMenu() {
     this.setState({
-        open: !this.state.open
-    });
-}
+        isOpen: !this.state.isOpen
+    })
+  }
 
   render() {
     const { anchorEl } = this.state;
@@ -42,8 +43,8 @@ export default class Nav extends Component {
           onClick={this.handleClick}
         >
       <HamburgerMenu
-    open={this.state.open}
-    onClick={this.handleHamburgerMenu.bind(this)}
+    isOpen={this.state.isOpen}
+    menuClicked={this.handleHamburgerMenu.bind(this)}
     width={30}
     height={15}
     strokeWidth={1}
