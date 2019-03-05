@@ -19,9 +19,9 @@ span{
   margin-top: 60px;
 }
 
-.titleWrapper{
-  margin-top: 100px;
-  margin-bottom: 80px;
+.registertitleWrapper{
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .subtitle{
@@ -57,8 +57,8 @@ letter-spacing: 0;
   margin-bottom: 50px;
 }
 
-.loginWrapper{
-  margin-top:70px;
+.RegisterWrapper{
+  margin-top:30px;
 }
 
 .backgroundImage{
@@ -78,6 +78,7 @@ letter-spacing: 0;
   color: #F28E5B !important;
   letter-spacing: 0;
   }
+
 /* need to enlarge the image
 need to make the textfield white
 need to make the image in the background
