@@ -34,7 +34,6 @@ class GraduateFeed extends Component {
                   cv={graduate.cv}
                   description={graduate.description}
                   workStatus={graduate.workStatus}
-
                   // skills={graduate.skills}
                 />
               </Link>
