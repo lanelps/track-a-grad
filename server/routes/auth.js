@@ -23,9 +23,12 @@ function register (req, res, next) {
       next()
     })
     .catch(({message}) => {
-      message.includes('user exists')
-        ? registrationError(res, 'User already exists.', 400)
-        : registrationError(res, `Something bad happened. We don't know why.`, 500)
+      if (message.includes('user exists')) {
+        (registrationError(res, 'User already exists.', 400))
+      } else {
+        console.error(message)
+        registrationError(res, `Something bad happened. We don't know why.`, 500)
+      }
     })
 }
 

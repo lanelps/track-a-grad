@@ -85,7 +85,10 @@ function registerGraduate ({email, password}, db = connection) {
     .then(graduate => {
       if (graduate) { throw new Error('user exists') }
     })
-    .then(() => generateHash(password)
-      .then(hash => db('users').insert({email, hash}))
-    )
+    .then(() => generateHash(password))
+    .then(hash => db('users').insert({email, hash, boolean: true}))
+    .then(userId => userId[0])
+    .then(userId => db('profiles').insert({'user_id': userId}))
+    // .then(firstName => db('profiles').insert({'first_name': firstName}))
+    // .finally(lastName => db('profiles').insert({'last_name': lastName}))
 }
