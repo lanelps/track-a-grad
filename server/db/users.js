@@ -88,5 +88,5 @@ function registerGraduate ({email, password, firstName, lastName}, db = connecti
     .then(() => generateHash(password))
     .then(hash => db('users').insert({email, hash, boolean: true}))
     .then(userId => userId[0])
-    .then(userId => db('profiles').insert({'user_id': userId, 'first_name': firstName, 'last_name': lastName}))
+    .then(userId => db('profiles').insert({'user_id': userId, 'first_name': firstName, 'last_name': lastName, 'cohort_id': '', 'profile_picture': '', 'location': '', 'cv_location': '', 'description': '', 'github_url': '', 'work_statuses_id': '', 'skills': ''}))
 }
