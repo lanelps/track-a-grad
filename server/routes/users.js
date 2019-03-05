@@ -4,7 +4,7 @@ const db = require('../db/users')
 const token = require('../auth/token')
 
 router.get('/', (req, res) => {
-  const status = 'true'
+  const status = true
   db.getGraduates(status)
     .then(graduates => {
       res.json(graduates)
