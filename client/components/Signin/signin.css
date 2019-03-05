@@ -1,3 +1,5 @@
+
+
 .signinBlock{
   position: absolute;
   float: left;
@@ -6,6 +8,7 @@
   width: 30%;
   margin-left:80px;
   z-index: 1;
+  min-width: 400px;
 }
 span{
   display:block;
@@ -71,7 +74,7 @@ letter-spacing: 0;
   bottom:0;
   width:auto;
   z-index: -1;
-  padding-top:100px
+  padding-top:100px;
 }
 
 .link a{
@@ -316,17 +319,17 @@ need to make the textfield white
 need to make the image in the background
 need to make it responsive */
 
-@media (min-width: 480px) and (orientation: landscape)
- {
-  body {
-    background-color: olive;
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .backgroundImage{
+    display: none;
   }
   .signinBlock{
     position: absolute;
     height: 100vh;
     background-color: #011548;
     width: 100%;
-    margin-left:80px;
     z-index: 1;
+    margin-left:0px;
   }
 }
+

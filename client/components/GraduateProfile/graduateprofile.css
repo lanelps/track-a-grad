@@ -25,8 +25,18 @@
   padding:20px;
   display: inline-block
 }
+.statusBar {
+  position: relative;
+  width: 150px;
+}
 
+.statusBar a{
+  position: absolute;
+  bottom: 100px;
+}
 .statusBar h3{
+  position: absolute;
+  bottom: 0px;
   display: inline-block;
   padding: 15px;
   font-family: IBMPlexSans-Light;
@@ -36,6 +46,7 @@
   background: #011548;
   border-radius: 7.5px;
   text-transform: uppercase;
+  
 }
 .graduateprofile h3{
   display: inline-block;
