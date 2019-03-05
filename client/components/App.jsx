@@ -6,6 +6,7 @@ import Registration from './Registration/Registration'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import EditForm from './EditForm/EditForm'
 import '../../server/public/main.css'
+import searchJobs from './searchJobs'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route exact path="/graduatefeed" component={GraduateFeed} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/graduatedashboard/:id/form" component={EditForm} />
+        <Route exact path="/search" component={searchJobs} />
       </React.Fragment>
     </Router>
   )
