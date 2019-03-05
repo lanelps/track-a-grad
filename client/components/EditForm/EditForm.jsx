@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import './editform.css'
 import {connect} from 'react-redux'
 import {getProfile, updateProfile} from '../../api/users'
@@ -7,6 +8,9 @@ import Form from '../Form/Form'
 class EditForm extends React.Component {
   constructor (props) {
     super(props)
+    this.state = {
+      redirect: false
+    }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount () {
@@ -16,6 +20,19 @@ class EditForm extends React.Component {
   handleSubmit (profile) {
     this.props.dispatch(updateProfile(profile))
   }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to={`/graduatedashboard/${this.props.match.params.id}`} />
+    }
+  }
+
   render () {
     return (
       <React.Fragment>
