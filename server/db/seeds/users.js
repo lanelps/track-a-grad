@@ -20,42 +20,42 @@ exports.seed = function (knex, Promise) {
               email: 'aubreytekanawa@gmail.com',
               hash: aubreyHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             },
             {
               id: 2,
               email: 'dluttig5@live.com',
               hash: davidHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             },
             {
               id: 3,
               email: 'vandahs@outlook.com',
               hash: evandahHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             },
             {
               id: 4,
               email: 'jasonjamessimpson@gmail.com',
               hash: jasonHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             },
             {
               id: 5,
               email: 'lanelps@gmail.com',
               hash: laneHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             },
             {
               id: 6,
               email: 'riki@craftsmoothie.co.nz',
               hash: rikiHash,
               last_login: new Date(),
-              boolean: 'true'
+              boolean: true
             }
           ])
         })
