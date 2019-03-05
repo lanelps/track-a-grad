@@ -24,10 +24,10 @@ class EditForm extends React.Component {
     return (
       <React.Fragment>
         {
-          (this.props.profile && this.props.profile.id === this.props.signIn.userId)
+          (this.props.profile)
             ? <Form profile={this.props.profile}
               submit={this.handleSubmit}/>
-            : <InValidLogIn />
+            : <div>Loading...</div>
         }
       </React.Fragment>
     )
