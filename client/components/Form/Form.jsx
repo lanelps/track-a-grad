@@ -66,7 +66,7 @@ class Form extends React.Component {
             src="../../images/trackergrad-logo.png"
             alt="tracker"
           />
-          <div className="titleWrapper">
+          <div className="titleWrapperForm">
             <span className="Title">
               <h1>Edit Profile</h1>
             </span>
@@ -93,8 +93,9 @@ class Form extends React.Component {
                 placeholder="paste url for image here"
               />
               <br />
-              <label>Work Status: </label>
+              <span>Work Status: </span>
               <select
+                className="select"
                 name="workStatusId"
                 onChange={this.statusChange}
                 value={this.state.workStatusId}
