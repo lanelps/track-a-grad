@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 class EditForm extends React.Component {
   constructor (props) {
     super(props)
+
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount () {
@@ -17,6 +18,7 @@ class EditForm extends React.Component {
   handleSubmit (profile) {
     this.props.dispatch(updateProfile(profile))
   }
+
   render () {
     return (
       <React.Fragment>
