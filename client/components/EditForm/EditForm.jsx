@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {getProfile, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
 import InvalidLogIn from '../Signin/InValidLogIn'
-import InValidLogIn from '../Signin/InValidLogIn';
 
 class EditForm extends React.Component {
   constructor (props) {
