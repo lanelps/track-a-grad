@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -22,12 +23,14 @@ class Form extends React.Component {
       mostRecentLocation: props.profile.mostRecentLocation,
       mostRecentStartDate: props.profile.mostRecentStartDate,
       mostRecentEndDate: props.profile.mostRecentEndDate,
-      mostRecentDescription: props.profile.mostRecentDescription
+      mostRecentDescription: props.profile.mostRecentDescription,
+      redirect: false
     }
 
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
     this.statusChange = this.statusChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.setRedirect = this.setRedirect.bind(this)
   }
 
   handleChange (e) {
@@ -43,10 +46,19 @@ class Form extends React.Component {
   }
 
   handleSubmit () {
-    this.props.submit(this.state)
+    this.props.submit(this.state, this.setRedirect())
+  }
+
+  setRedirect () {
+    this.setState({
+      redirect: true
+    })
   }
 
   render () {
+    if (this.state.redirect) {
+      return <Redirect to={`/graduatedashboard/${this.state.id}`} />
+    }
     return (
       <React.Fragment>
         <div className="container">
@@ -54,8 +66,8 @@ class Form extends React.Component {
           <div className="titleWrapper">
             <span className='Title'><h1>Graduate Profile Page</h1> </span>
             <span className="subtitle">Edit Mode</span>
-
-            <form action={`/graduatedashboard/${this.state.id}`} onSubmit={this.handleSubmit}>
+            {/* action={`/graduatedashboard/${this.state.id}`} */}
+            <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField id="standard-dense" margin="dense" className="input" name='firstName' value={this.state.firstName} onChange={this.handleChange} type='text' placeholder='First Name'/>
               <TextField id="standard-dense" margin="dense" className="input" name='lastName' value={this.state.lastName} onChange={this.handleChange} type='text' placeholder='Last Name'/> <br/>
