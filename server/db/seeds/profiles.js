@@ -87,7 +87,7 @@ exports.seed = function (knex, Promise) {
           github_url: 'https://github.com/craftedcraft',
           work_statuses_id: 1,
           skills: 'Git & Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
-        },
+        }
       ])
     })
 }

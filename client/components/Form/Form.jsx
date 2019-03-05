@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -12,7 +13,7 @@ class Form extends React.Component {
       firstName: props.profile.firstName,
       lastName: props.profile.lastName,
       profilePicture: props.profile.profilePicture,
-      workStatus: props.profile.workStatus,
+      workStatusId: props.profile.workStatusId,
       location: props.profile.location,
       cv: props.profile.cv,
       skills: props.profile.skills,
@@ -22,11 +23,14 @@ class Form extends React.Component {
       mostRecentLocation: props.profile.mostRecentLocation,
       mostRecentStartDate: props.profile.mostRecentStartDate,
       mostRecentEndDate: props.profile.mostRecentEndDate,
-      mostRecentDescription: props.profile.mostRecentDescription
+      mostRecentDescription: props.profile.mostRecentDescription,
+      redirect: false
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.statusChange = this.statusChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.setRedirect = this.setRedirect.bind(this)
   }
 
   handleChange (e) {
@@ -35,11 +39,26 @@ class Form extends React.Component {
     })
   }
 
+  statusChange (e) {
+    this.setState({
+      workStatusId: Number(e.target.value)
+    })
+  }
+
   handleSubmit () {
-    this.props.submit(this.state)
+    this.props.submit(this.state, this.setRedirect())
+  }
+
+  setRedirect () {
+    this.setState({
+      redirect: true
+    })
   }
 
   render () {
+    if (this.state.redirect) {
+      return <Redirect to={`/graduatedashboard/${this.state.id}`} />
+    }
     return (
       <React.Fragment>
         <div className="container">
@@ -48,12 +67,19 @@ class Form extends React.Component {
             <span className='Title'><h1>Graduate Profile Page</h1> </span>
             <span className="subtitle">Edit Mode</span>
 
-            <form action={`/graduatedashboard/${this.state.id}`} onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField id="standard-dense" margin="dense" className="input" name='firstName' value={this.state.firstName} onChange={this.handleChange} type='text' placeholder='First Name'/>
               <TextField id="standard-dense" margin="dense" className="input" name='lastName' value={this.state.lastName} onChange={this.handleChange} type='text' placeholder='Last Name'/> <br/>
               <TextField id="standard-dense" margin="dense" className="input" name='profilePicture' value={this.state.profilePicture} onChange={this.handleChange} type='text' placeholder='paste url for image here'/><br/>
-              <TextField id="standard-dense" margin="dense" className="input" name='workStatus' value={this.state.workStatus} onChange={this.handleChange} type='text' placeholder='Whats your work Status?'/><br/>
+
+              <label>Work Status: </label>
+              <select name='workStatusId' onChange={this.statusChange} value={this.state.workStatusId} >
+                <option value='1'>Available</option>
+                <option value='2'>Unavailable</option>
+              </select>
+              <br />
+
               <TextField id="standard-dense" margin="dense" className="input" name='location' value={this.state.location} onChange={this.handleChange} type='text' placeholder='Where do you live?'/><br/>
               <TextField id="standard-dense" margin="dense" className="input" name='description' value={this.state.description} onChange={this.handleChange} type='text' placeholder='What is your point of difference?'/><br/>
 
