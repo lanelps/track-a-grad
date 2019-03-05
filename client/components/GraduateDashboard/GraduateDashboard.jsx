@@ -27,10 +27,20 @@ class GraduateDashboard extends Component {
                 firstName={this.props.profile.firstName} lastName={this.props.profile.lastName} workStatus={this.props.profile.workStatus}
                 location={this.props.profile.location}
                 cohort={this.props.profile.cohort}
+                year={this.props.profile.year}
                 cv={this.props.profile.cv}
+                description={this.props.profile.description}
               />
               <Info
                 skills={this.props.profile.skills}
+                mostRecentOrganisation={this.props.profile.mostRecentOrganisation}
+                mostRecentRole={this.props.profile.mostRecentRole}
+                mostRecentLocation={this.props.profile.mostRecentLocation}
+                mostRecentStartDate={this.props.profile.mostRecentStartDate}
+                mostRecentEndDate={this.props.profile.mostRecentEndDate}
+                mostRecentDescription={this.props.profile.mostRecentDescription}
+                githubUrl={this.props.profile.githubUrl}
+
               />
               Contact Form
               <ContactForm />
