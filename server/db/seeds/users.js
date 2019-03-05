@@ -5,40 +5,50 @@ exports.seed = function (knex, Promise) {
   return knex('users').del()
     .then(function () {
       Promise.all([
-        generateHash('johnsHash'),
-        generateHash('bossesHash')
+        generateHash('aubrey'),
+        generateHash('david'),
+        generateHash('evandah'),
+        generateHash('jason'),
+        generateHash('lane'),
+        generateHash('riki'),        
       ])
-        .then(([johnsHash, bossesHash]) => {
+        .then(([aubreyHash, davidHash, evandahHash, jasonHash, laneHash, rikiHash]) => {
           // Inserts seed entries
           return knex('users').insert([
             {
               id: 1,
               email: 'aubreytekanawa@gmail.com',
-              hash: johnsHash,
+              hash: aubreyHash,
               last_login: new Date(),
               boolean: 'true'},
             {
               id: 2,
               email: 'dluttig5@live.com',
-              hash: bossesHash,
+              hash: davidHash,
               last_login: new Date(),
               boolean: 'false'},
             {
               id: 3,
               email: 'vandahs@outlook.com',
-              hash: johnsHash,
+              hash: evandahHash,
               last_login: new Date(),
               boolean: 'false'},
             {
               id: 4,
               email: 'jasonjamessimpson@gmail.com',
-              hash: bossesHash,
+              hash: jasonHash,
               last_login: new Date(),
               boolean: 'false'},
             {
               id: 5,
+              email: 'lanelps@gmail.com',
+              hash: laneHash,
+              last_login: new Date(),
+              boolean: 'false'},
+            {
+              id: 6,
               email: 'riki@craftsmoothie.co.nz',
-              hash: johnsHash,
+              hash: rikiHash,
               last_login: new Date(),
               boolean: 'false'},
           ])

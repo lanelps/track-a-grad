@@ -14,8 +14,8 @@ exports.seed = function (knex, Promise) {
           description: 'Overseeing Maori Housing Network Projects in Te Tai Tokerau region'
         },
         {id: 2,
-          profile_id: 1,
-          role: '',
+          profile_id: 2,
+          role: 'IT Analyst',
           organisation: '',
           location: '',
           start_date: '',
