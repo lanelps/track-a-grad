@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { getProfile, getWorkStatusList, updateProfile } from '../../api/users'
 import Form from '../Form/Form'
-import SignIn from '../SignIn/SignIn'
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -29,17 +28,20 @@ class EditForm extends React.Component {
     }
     return (
       <React.Fragment>
-        {this.props.profile &&
-        this.props.signIn &&
-        this.props.profile.id === this.props.signIn.userId ? (
-          <Form
+        {
+          (
+            this.props.profile &&
+            this.props.signIn &&
+            this.props.workstatuses &&
+            (this.props.profile.id === this.props.signIn.userId)
+            ) ?
+           <Form
             profile={this.props.profile}
             workStatuses={this.props.workStatuses}
             submit={this.handleSubmit}
           />
-        ) : (
-          <div>Loading...</div>
-        )}
+         : <div>Loading...</div>
+        }
       </React.Fragment>
     )
   }
