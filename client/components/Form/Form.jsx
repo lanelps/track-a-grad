@@ -1,9 +1,9 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import Nav from '../Nav/Nav'
 
-import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-
+import './form.css'
 class Form extends React.Component {
   constructor (props) {
     super(props)
@@ -61,57 +61,180 @@ class Form extends React.Component {
     }
     return (
       <React.Fragment>
+        <Nav />
         <div className="container">
-          <img className="logo" src='../../images/trackergrad-logo.png' alt="tracker"/>
-          <div className="titleWrapper">
-            <span className='Title'><h1>Graduate Profile Page</h1> </span>
-            <span className="subtitle">Edit Mode</span>
-
+          <div className="spacer"></div>
+          <div className="titleWrapperForm">
+            <span className="Title">
+              <h1>Edit Profile</h1>
+            </span>
+            <div className="seperator"></div>
             <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='firstName' value={this.state.firstName} onChange={this.handleChange} type='text' placeholder='First Name'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='profilePicture' value={this.state.profilePicture} onChange={this.handleChange} type='text' placeholder='paste url for image here'/><br/>
-
-              <label>Work Status: </label>
-              <select name='workStatusId' onChange={this.statusChange} value={this.state.workStatusId} >
-                <option value='1'>Available</option>
-                <option value='2'>Unavailable</option>
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="firstName"
+                value={this.state.firstName}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="First Name"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="profilePicture"
+                value={this.state.profilePicture}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="paste url for image here"
+              />
+              <br />
+              <span>Work Status: </span>
+              <select
+                className="select"
+                name="workStatusId"
+                onChange={this.statusChange}
+                value={this.state.workStatusId}
+              >
+                <option value="1">Available</option>
+                <option value="2">Unavailable</option>
               </select>
               <br />
-
-              <TextField id="standard-dense" margin="dense" className="input" name='location' value={this.state.location} onChange={this.handleChange} type='text' placeholder='Where do you live?'/><br/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='description' value={this.state.description} onChange={this.handleChange} type='text' placeholder='Description'/><br/>
-
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="location"
+                value={this.state.location}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Where do you live?"
+              />
+              <br />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Description"
+              />
+              <br />
+              <div className="seperator"></div>
               <h2>CONTACT INFORMATION</h2>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='email' value={this.state.email} onChange={this.handleChange} type='text' placeholder='Email'/><br/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='cv' value={this.state.cv} onChange={this.handleChange} type='text' placeholder='Insert link to CV or LinkedIn Profile'/><br/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='githubUrl' value={this.state.githubUrl} onChange={this.handleChange} type='text' placeholder='Insert link to Github Profile'/> <br/>
-
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Email"
+              />
+              <br />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="cv"
+                value={this.state.cv}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Insert link to CV or LinkedIn Profile"
+              />
+              <br />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="githubUrl"
+                value={this.state.githubUrl}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Insert link to Github Profile"
+              />{' '}
+              <br />
+              <div className="seperator"></div>
               <h2>SKILLS</h2>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='skills' value={this.state.skills} onChange={this.handleChange} type='text' placeholder='Insert Specific Programming Languages, Libraries or Competencies'/>
-
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="skills"
+                value={this.state.skills}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Insert Specific Programming Languages, Libraries or Competencies"
+              />
+              <div className="seperator"></div>
               <h2>WORK</h2>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentOrganisation' value={this.state.mostRecentOrganisation} onChange={this.handleChange} type='text' placeholder='Who was your most recent employer?'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentLocation' value={this.state.mostRecentLocation} onChange={this.handleChange} type='text' placeholder='location?'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentRole' value={this.state.mostRecentRole} onChange={this.handleChange} type='text' placeholder='What was your role?'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentStartDate' value={this.state.mostRecentStartDate} onChange={this.handleChange} type='text' placeholder='Start date'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentEndDate' value={this.state.mostRecentEndDate} onChange={this.handleChange} type='text' placeholder='End date'/>
-
-              <TextField id="standard-dense" margin="dense" className="input" name='mostRecentDescription' value={this.state.mostRecentDescription} onChange={this.handleChange} type='text' placeholder='Description'/>
-
-              <input type="submit" value="Submit" />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentOrganisation"
+                value={this.state.mostRecentOrganisation}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Who was your most recent employer?"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentLocation"
+                value={this.state.mostRecentLocation}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="location?"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentRole"
+                value={this.state.mostRecentRole}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="What was your role?"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentStartDate"
+                value={this.state.mostRecentStartDate}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Start date"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentEndDate"
+                value={this.state.mostRecentEndDate}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="End date"
+              />
+              <TextField
+                id="standard-dense"
+                margin="dense"
+                className="input"
+                name="mostRecentDescription"
+                value={this.state.mostRecentDescription}
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Description"
+              />
+              <input className="submit" type="submit" value="Submit" />
             </form>
           </div>
         </div>

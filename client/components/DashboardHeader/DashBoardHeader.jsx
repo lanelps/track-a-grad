@@ -16,7 +16,6 @@ export default function DashBoardHeader (props) {
           </div>
         </div>
         <div className="statusBar">
-          {/* <p>{props.status} </p> */}
           <h3>{props.workStatus}</h3>
           <div>
             <a href="#">See C.V</a>

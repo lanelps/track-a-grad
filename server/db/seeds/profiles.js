@@ -9,7 +9,7 @@ exports.seed = function (knex, Promise) {
           user_id: 1,
           first_name: 'Aubrey',
           last_name: 'Te Kanawa',
-          cohort_id: 12,
+          cohort_id: 0,
           profile_picture: 'server/public/images/avatars/avatar31.png',
           location: 'Auckland',
           cv_location: 'https://aubreytekanawa.github.io/profile/',

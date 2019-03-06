@@ -4,17 +4,26 @@ const {generateHash} = require('../auth/hash')
 module.exports = {
   getGraduates,
   getProfile,
+  getStatuses,
   getPortfolio,
   updateUser,
   updateProfile,
   updateMostRecentEmploymentDetails,
   getGraduateByEmail,
-  registerGraduate
+  registerGraduate,
+  getGraduateById
 }
 
 function getGraduateByEmail (email, db = connection) {
   return db('users')
     .where('email', email)
+    .first()
+}
+
+function getGraduateById (id, db = connection) {
+  return db('users')
+    .select('id', 'username')
+    .where('id', id)
     .first()
 }
 
@@ -35,6 +44,11 @@ function getProfile (id, db = connection) {
     .where('users.id', id)
     .first()
     .select('users.id as id', 'email', 'first_name as firstName', 'last_name as lastName', 'profile_picture as profilePicture', 'cohort', 'year', 'work_statuses.status as workStatus', 'work_statuses_id as workStatusId', 'profiles.location as location', 'cv_location as cv', 'profiles.description as description', 'skills', 'github_url as githubUrl', 'most_recent_employment_details.role as mostRecentRole', 'most_recent_employment_details.organisation as mostRecentOrganisation', 'most_recent_employment_details.location as mostRecentLocation', 'most_recent_employment_details.start_date as mostRecentStartDate', 'most_recent_employment_details.end_date as mostRecentEndDate', 'most_recent_employment_details.description as mostRecentDescription')
+}
+
+function getStatuses (db = connection) {
+  return db('work_statuses')
+    .select()
 }
 
 function getPortfolio (id, db = connection) {
@@ -80,12 +94,13 @@ function updateMostRecentEmploymentDetails (graduate, db = connection) {
     })
 }
 
-function registerGraduate ({email, password}, db = connection) {
+function registerGraduate ({email, password, firstName, lastName}, db = connection) {
   return getGraduateByEmail(email)
     .then(graduate => {
       if (graduate) { throw new Error('user exists') }
     })
-    .then(() => generateHash(password)
-      .then(hash => db('users').insert({email, hash}))
-    )
+    .then(() => generateHash(password))
+    .then(hash => db('users').insert({email, hash, boolean: true}))
+    .then(userId => userId[0])
+    .then(userId => db('profiles').insert({'user_id': userId, 'first_name': firstName, 'last_name': lastName, 'cohort_id': '', 'profile_picture': '', 'location': '', 'cv_location': '', 'description': '', 'github_url': '', 'work_statuses_id': '', 'skills': ''}))
 }
