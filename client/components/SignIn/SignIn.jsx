@@ -23,31 +23,14 @@ class SignIn extends Component {
     e.preventDefault()
   }
 
-  // handleSubmit (e) {
-  //   const {name, value} = this.state
-  //   console.log(e)
-  //   e.preventDefault()
-  //   this.props.dispatch(signIn(user))
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   })
-  //   console.log(e)
-  // }
-  
   handleSubmit (e) {
     e.preventDefault()
     const {email, password} = this.state
-    const goToGraduateDashboard = userId => this.props.history.push(`/graduatedashboard/${userId}/form`)
+    const goToGraduateDashboard = userId => this.props.history.push(`/form`)
     this.props.dispatch(signIn(email, password, goToGraduateDashboard)) // TODO: callback - confirmSuccess
   }
 
   render () {
-    if (this.props.SignedIn) {
-      return <Redirect to='/graduatefeed' />
-    }
-
-    // const {email, password} = this.state
-
     return (
       <React.Fragment>
         <div className="signinBlock">
@@ -91,7 +74,7 @@ class SignIn extends Component {
 
 function mapStateToProps (state) {
   return {
-    signin: state.signIn // TODO: remove, not used
+    signIn: state.signIn
   }
 }
 export default connect(mapStateToProps)(SignIn)

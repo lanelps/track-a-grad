@@ -11,12 +11,20 @@ module.exports = {
   updateProfile,
   updateMostRecentEmploymentDetails,
   getGraduateByEmail,
-  registerGraduate
+  registerGraduate,
+  getGraduateById
 }
 
 function getGraduateByEmail (email, db = connection) {
   return db('users')
     .where('email', email)
+    .first()
+}
+
+function getGraduateById (id, db = connection) {
+  return db('users')
+    .select('id', 'username')
+    .where('id', id)
     .first()
 }
 

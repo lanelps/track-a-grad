@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken')
 const verifyJwt = require('express-jwt')
 
 const db = require('../db/users')
+const jwtTestSecret = require('../../tests/server/routes/jwt-test-secret')
 
 module.exports = {
   issue,
@@ -12,10 +13,13 @@ module.exports = {
 function issue (req, res) {
   db.getGraduateByEmail(req.body.email)
     .then(user => {
+      // todo: user's hashed password should not be sent back to client
+      // client doesn't need it, and no guarantees that it wiil be stored securely.
       const token = createToken(user, process.env.JWT_SECRET)
       res.json({
         message: 'Authentication successful.',
-        token
+        token,
+        userId: user.id
       })
     })
 }
@@ -36,5 +40,9 @@ function createToken (user, secret) {
 }
 
 function getSecret (req, payload, done) {
-  done(null, process.env.JWT_SECRET)
+  const secret = process.env.JWT_SECRET || jwtTestSecret
+  if (secret === jwtTestSecret) {
+    // console.warn('ATTENTION: Using the JWT Test secret')
+  }
+  done(null, secret)
 }
