@@ -47,7 +47,6 @@ class GraduateDashboard extends Component {
                 mostRecentDescription={this.props.profile.mostRecentDescription}
                 githubUrl={this.props.profile.githubUrl}
               />
-              Contact Form
               <ContactForm />
 
             </div>
