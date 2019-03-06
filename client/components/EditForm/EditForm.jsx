@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import {getProfile, getWorkStatusList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
-import SignIn from '../SignIn/SignIn'
 
 class EditForm extends React.Component {
   constructor (props) {
