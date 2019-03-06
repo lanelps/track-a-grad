@@ -72,7 +72,7 @@ class Registration extends Component {
                 </span>
               </label>
               <label className="field a-field a-field_a2 page__field">
-                <input className="field__input a-field__input" placeholder=" " name="password" type="email" value={this.state.password} onChange={this.handleChange} required />
+                <input className="field__input a-field__input" placeholder=" " name="password" type="password" value={this.state.password} onChange={this.handleChange} required />
                 <span className="a-field__label-wrap">
                   <span className="a-field__label">Password</span>
                 </span>
@@ -81,9 +81,8 @@ class Registration extends Component {
             <div className="RegisterWrapper">
               <button className="loginButton" type="submit" onClick={this.handleSubmit} >Register</button>
             </div>
-            <div className="space"></div>
             <div className="link">
-              <a href="/">Login</a>
+              <a href="/signin">Login</a>
             </div>
           </div>
         </div>
