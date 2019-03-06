@@ -25,7 +25,8 @@ class EditForm extends React.Component {
       <React.Fragment>
         {
           (this.props.profile)
-            ? <Form profile={this.props.profile} submit={this.handleSubmit}/> : <div>Loading...</div>
+            ? <Form profile={this.props.profile} workStatuses={this.props.workStatuses} submit={this.handleSubmit}/> : <div>Loading...</div>
+
         }
       </React.Fragment>
     )
