@@ -8,6 +8,15 @@ const verifyJwt = require('express-jwt')
 router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkGraduate, token.issue)
 
+// router.get(`/graduatedashboard/:id/form`, token.decode, (req, res) => {
+//   db.getUserById(Number(req.params.id))
+//     .then(user => {
+//       res.json(user)
+//     })
+//     .catch(err => {
+//       res.status(500).send(err.message)
+//     })
+// })
 // match user email or id
 // router.get(
 // `/graduatedashboard/${userId}`,
@@ -47,6 +56,7 @@ function validateLogin (req, res, next) {
 function checkGraduate (req, res, next) {
   db.getGraduateByEmail(req.body.email)
     .then(graduate => {
+      // todo: id gets sent to local store even if password is wrong.
       if (graduate) res.locals.graduateId = graduate.id
       return graduate && hash.verify(graduate.hash, req.body.password)
     })
