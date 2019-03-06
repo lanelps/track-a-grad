@@ -30,39 +30,47 @@ export default class Nav extends Component {
     const { anchorEl } = this.state
     return (
       <React.Fragment>
-      <div className="navWrapper">
-        <div className="navlogo">
-          <img src='../../images/trackergrad-logo.png' alt="tracker"/>
-        </div>
-        <div className="menu">
-        <Button
-          aria-owns={anchorEl ? 'simple-menu' : undefined}
-          aria-haspopup="true"
-          onClick={this.handleClick}
-        >
-      <HamburgerMenu
-    isOpen={this.state.isOpen}
-    menuClicked={this.handleHamburgerMenu.bind(this)}
-    width={30}
-    height={15}
-    strokeWidth={1}
-    color='white'
-    animationDuration={0.5}
-      />
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={this.handleClose}
-        >
-          <MenuItem onClick={this.handleClose}><Link to="/login">Sign In</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to="/registration">Register</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}> <Link to="/">Graduate Feed</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to="/graduateprofile">Profile</Link></MenuItem>
-          
-        </Menu>
-        </div>
+        <div className="navWrapper">
+          <div className="navlogo">
+            <img src="../../images/trackergrad-logo.png" alt="tracker" />
+          </div>
+          <div className="menu">
+            <Button
+              aria-owns={anchorEl ? 'simple-menu' : undefined}
+              aria-haspopup="true"
+              onClick={this.handleClick}
+            >
+              <HamburgerMenu
+                isOpen={this.state.isOpen}
+                menuClicked={this.handleHamburgerMenu.bind(this)}
+                width={30}
+                height={15}
+                strokeWidth={1}
+                color="white"
+                animationDuration={0.5}
+              />
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={this.handleClose}
+            >
+              <MenuItem onClick={this.handleClose}>
+                <Link to="/">Sign In</Link>
+              </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <Link to="/registration">Register</Link>
+              </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                {' '}
+                <Link to="/graduatefeed">Graduate Feed</Link>
+              </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <Link to="/graduateprofile">Profile</Link>
+              </MenuItem>
+            </Menu>
+          </div>
         </div>
       </React.Fragment>
     )
