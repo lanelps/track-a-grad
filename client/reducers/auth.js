@@ -1,4 +1,4 @@
-const initialState = []
+const initialState = null
 
 const signIn = (state = initialState, action) => {
   switch (action.type) {

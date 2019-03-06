@@ -1,10 +1,10 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 import TextField from '@material-ui/core/TextField'
 import './form.css'
 class Form extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       id: props.profile.id,
@@ -32,29 +32,29 @@ class Form extends React.Component {
     this.setRedirect = this.setRedirect.bind(this)
   }
 
-  handleChange(e) {
+  handleChange (e) {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  statusChange(e) {
+  statusChange (e) {
     this.setState({
       workStatusId: Number(e.target.value)
     })
   }
 
-  handleSubmit() {
+  handleSubmit () {
     this.props.submit(this.state, this.setRedirect())
   }
 
-  setRedirect() {
+  setRedirect () {
     this.setState({
       redirect: true
     })
   }
 
-  render() {
+  render () {
     if (this.state.redirect) {
       return <Redirect to={`/graduatedashboard/${this.state.id}`} />
     }
