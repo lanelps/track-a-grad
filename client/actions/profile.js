@@ -11,6 +11,19 @@ export function receiveProfile (profile) {
   }
 }
 
+export function requestWorkStatusList () {
+  return {
+    type: 'REQUEST_STATUS_LIST'
+  }
+}
+
+export function receiveWorkStatusList (workStatuses) {
+  return {
+    type: 'RECEIVE_STATUS_LIST',
+    workStatuses: workStatuses
+  }
+}
+
 export function editProfile () {
   return {
     type: 'EDIT_PROFILE'

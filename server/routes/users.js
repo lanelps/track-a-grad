@@ -14,6 +14,16 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/profiles/workstatuslist', (req, res) => {
+  db.getStatuses()
+    .then(workStatuses => {
+      res.json(workStatuses)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
 router.get('/profiles/:id', (req, res) => {
   const id = req.params.id
   db.getProfile(id)
