@@ -42,7 +42,7 @@ class SignIn extends Component {
   }
 
   render () {
-    if (this.props.SignedIn) {
+    if (this.props.SignIn) {
       return <Redirect to='/graduatefeed' />
     }
 
