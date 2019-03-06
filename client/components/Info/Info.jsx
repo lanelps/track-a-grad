@@ -23,14 +23,13 @@ export default function Info (props) {
 
             </div>
           </div>
-          <p>
-            {props.mostRecentOrganisation}
-            {props.mostRecentRole}
-            {props.mostRecentLocation}
-            {props.mostRecentStartDate}
-            {props.mostRecentEndDate}
-            {props.mostRecentDescription}
-          </p>
+          <p>{props.mostRecentOrganisation}</p>
+          <p> {props.mostRecentRole}</p>
+          <p>{props.mostRecentLocation}</p> 
+          <p>{props.mostRecentStartDate}</p> 
+          <p> {props.mostRecentEndDate}</p>
+          <p> {props.mostRecentDescription}</p>
+
         </div>
 
         <div className="info-section">
