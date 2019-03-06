@@ -29,7 +29,7 @@ class EditForm extends React.Component {
     return (
       <React.Fragment>
         {
-          (this.props.profile && this.props.signIn && (this.props.profile.id === this.props.signIn.userId))
+          (this.props.profile && this.props.signIn && this.props.workStatuses && (this.props.profile.id === this.props.signIn.userId))
             ? <Form profile={this.props.profile}
               submit={this.handleSubmit}/>
             : <div>Loading...</div>
