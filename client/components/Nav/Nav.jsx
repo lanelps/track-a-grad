@@ -32,7 +32,7 @@ export default class Nav extends Component {
       <React.Fragment>
         <div className="navWrapper">
           <div className="navlogo">
-          <Link to="/graduatefeed"> <img src="../../images/trackergrad-logo.png" alt="tracker" /></Link>
+          <Link to="/"> <img src="../../images/trackergrad-logo.png" alt="tracker" /></Link>
           </div>
           <div className="menu">
             <Button

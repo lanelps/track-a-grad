@@ -21,8 +21,15 @@ class GraduateDashboard extends Component {
           <React.Fragment>
             <Nav />
             <div className="spacer" />
-            <h1 className="gradDashboard-title">Graduate Dashboard</h1>
+            <h1 className="gradDashboard-title">Graduate Profile</h1>
             <div className="graduatedashboard">
+              <Link
+                className="editButton"
+                key={this.props.profile.id}
+                to={`/graduatedashboard/${this.props.profile.id}/form`}
+              >
+                <img src='../../images/pencil.png' alt="pencil"/>
+              </Link>
               <DashBoardHeader
                 firstName={this.props.profile.firstName}
                 lastName={this.props.profile.lastName}
@@ -33,6 +40,7 @@ class GraduateDashboard extends Component {
                 cv={this.props.profile.cv}
                 description={this.props.profile.description}
               />
+
               <Info
                 skills={this.props.profile.skills}
                 mostRecentOrganisation={
@@ -47,12 +55,7 @@ class GraduateDashboard extends Component {
               />
               Contact Form
               <ContactForm />
-              <Link
-                key={this.props.profile.id}
-                to={`/graduatedashboard/${this.props.profile.id}/form`}
-              >
-                Edit
-              </Link>
+
             </div>
           </React.Fragment>
         ) : (
