@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './registration.css'
-import {Link} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Register} from '../../actions/auth'
 
-class Register extends React.Component {
+class Registration extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -12,15 +14,35 @@ class Register extends React.Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
+    const {name, value} = e.target
     this.setState({
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    e.preventDefault()
   }
 
+  handleSubmit (e) {
+    e.preventDefault()
+    const {firstName, lastName, email, password} = this.state
+    const goToGraduateDashboard = userId => this.props.history.push(`/graduatedashboard/${userId}/form`)
+    this.props.dispatch(Register(firstName, lastName, email, password, goToGraduateDashboard)) // TODO: callback - confirmSuccess
+  }
+
+  // handleChange (e) {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
+
+  // Change redirect to signIn
   render () {
+    // if (this.props.Register) {
+    //   return <Redirect to='/graduatedashfeed' />
+    // }
     return (
       <React.Fragment>
         <div className="signinBlock">
@@ -42,7 +64,7 @@ class Register extends React.Component {
                 <span className="a-field__label-wrap">
                   <span className="a-field__label">Last Name</span>
                 </span>
-              </label> 
+              </label>
               <label className="field a-field a-field_a2 page__field">
                 <input className="field__input a-field__input" placeholder=" " name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
                 <span className="a-field__label-wrap">
@@ -57,7 +79,7 @@ class Register extends React.Component {
               </label>
             </div>
             <div className="RegisterWrapper">
-              <Link to="/graduatefeed" className="loginButton">Register</Link>
+              <button className="loginButton" type="submit" onClick={this.handleSubmit} >Register</button>
             </div>
             <div className="space"></div>
             <div className="link">
@@ -71,4 +93,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register
+export default connect()(Registration)

@@ -2,7 +2,7 @@ import request from 'superagent'
 
 import {requestGraduates, receiveGraduates} from '../actions/users'
 
-import {requestProfile, receiveProfile, editProfile} from '../actions/profile'
+import {requestProfile, receiveProfile, requestWorkStatusList, receiveWorkStatusList, editProfile} from '../actions/profile'
 
 const usersUrl = 'http://localhost:3000/api/v1/users'
 
@@ -33,6 +33,20 @@ export function getProfile (id) {
   }
 }
 
+export function getWorkStatusList () {
+  return (dispatch) => {
+    dispatch(requestWorkStatusList())
+    return request
+      .get(`${usersUrl}/profiles/workstatuslist`)
+      .then(res => {
+        dispatch(receiveWorkStatusList(res.body))
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get work status list')
+      })
+  }
+}
+
 export function updateProfile (state) {
   return (dispatch) => {
     const id = state.id
@@ -43,7 +57,6 @@ export function updateProfile (state) {
       .then(() => getProfile(id))
       .catch(err => {
         if (err) {
-          console.error(err)
           throw Error('Cannot update profile')
         }
       })

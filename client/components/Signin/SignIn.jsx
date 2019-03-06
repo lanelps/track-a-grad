@@ -33,6 +33,7 @@ class SignIn extends Component {
   //   })
   //   console.log(e)
   // }
+  
   handleSubmit (e) {
     e.preventDefault()
     const {email, password} = this.state
@@ -90,7 +91,7 @@ class SignIn extends Component {
 
 function mapStateToProps (state) {
   return {
-    signin: state.signIn
+    signin: state.signIn // TODO: remove, not used
   }
 }
 export default connect(mapStateToProps)(SignIn)

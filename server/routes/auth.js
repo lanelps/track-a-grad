@@ -9,12 +9,12 @@ router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkGraduate, token.issue)
 
 // match user email or id
-router.get(
-  // `/graduatedashboard/${userId}`,
-  '/graduatedashboard:id',
-  verifyJwt({secret: process.env.JWT_SECRET})
-  // graduatedashboard
-)
+// router.get(
+// `/graduatedashboard/${userId}`,
+// '/graduatedashboard:id',
+// verifyJwt({secret: process.env.JWT_SECRET})
+// graduatedashboard
+// )
 
 function register (req, res, next) {
   db.registerGraduate(req.body)
@@ -23,9 +23,11 @@ function register (req, res, next) {
       next()
     })
     .catch(({message}) => {
-      message.includes('user exists')
-        ? registrationError(res, 'User already exists.', 400)
-        : registrationError(res, `Something bad happened. We don't know why.`, 500)
+      if (message.includes('user exists')) {
+        (registrationError(res, 'User already exists.', 400))
+      } else {
+        registrationError(res, `Something bad happened. We don't know why.`, 500)
+      }
     })
 }
 

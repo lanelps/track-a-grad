@@ -1,10 +1,10 @@
-.graduatedashboard{
-  margin-top: 20px; 
+.graduatedashboard {
+  margin-top: 20px;
   padding: 40px 30px 60px 30px;
   background-color: white;
   width: 70%;
   margin-left: 35px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.34);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.34);
   border-radius: 18px;
 }
 
