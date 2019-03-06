@@ -25,6 +25,15 @@
   padding:20px;
   display: inline-block
 }
+.statusBar {
+  position: relative;
+  width: 150px;
+}
+
+.statsubarwrapper{
+  position: absolute;
+  bottom: 0px;
+}
 
 .statusBar h3{
   display: inline-block;

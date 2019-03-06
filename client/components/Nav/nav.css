@@ -9,6 +9,7 @@
   width:100vw;
   position:fixed;
   background-color: #011548;
+  z-index: 20;
 }
 
 .navlogo{

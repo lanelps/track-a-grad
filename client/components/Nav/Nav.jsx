@@ -32,7 +32,7 @@ export default class Nav extends Component {
       <React.Fragment>
         <div className="navWrapper">
           <div className="navlogo">
-            <img src="../../images/trackergrad-logo.png" alt="tracker" />
+          <Link to="/"> <img src="../../images/trackergrad-logo.png" alt="tracker" /></Link>
           </div>
           <div className="menu">
             <Button
@@ -57,17 +57,14 @@ export default class Nav extends Component {
               onClose={this.handleClose}
             >
               <MenuItem onClick={this.handleClose}>
-                <Link to="/">Sign In</Link>
+                <Link to="/signin">Sign In</Link>
               </MenuItem>
               <MenuItem onClick={this.handleClose}>
                 <Link to="/registration">Register</Link>
               </MenuItem>
               <MenuItem onClick={this.handleClose}>
                 {' '}
-                <Link to="/graduatefeed">Graduate Feed</Link>
-              </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <Link to="/graduateprofile">Profile</Link>
+                <Link to="/">Graduate Feed</Link>
               </MenuItem>
             </Menu>
           </div>
@@ -76,3 +73,5 @@ export default class Nav extends Component {
     )
   }
 }
+
+
