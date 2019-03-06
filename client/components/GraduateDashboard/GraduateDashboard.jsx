@@ -1,27 +1,27 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 import Nav from '../Nav/Nav'
 import DashBoardHeader from '../DashboardHeader/DashBoardHeader'
 import Info from '../Info/Info'
 import ContactForm from '../contactForm/ContactForm'
 import './graduatedashboard.css'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-import { connect } from 'react-redux'
-import { getProfile } from '../../api/users'
+import {connect} from 'react-redux'
+import {getProfile} from '../../api/users'
 
 class GraduateDashboard extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(getProfile(this.props.match.params.id))
   }
-  render() {
+  render () {
     return (
       <React.Fragment>
         {this.props.profile ? (
           <React.Fragment>
             <Nav />
             <div className="spacer" />
-            <h1>Graduate Dashboard</h1>
+            <h1 className="gradDashboard-title">Graduate Dashboard</h1>
             <div className="graduatedashboard">
               <DashBoardHeader
                 firstName={this.props.profile.firstName}

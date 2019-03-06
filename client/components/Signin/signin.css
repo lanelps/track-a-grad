@@ -6,6 +6,7 @@
   width: 30%;
   margin-left:80px;
   z-index: 1;
+  min-width: 400px;
 }
 span{
   display:block;
@@ -55,6 +56,7 @@ letter-spacing: 0;
   border: 1px solid #F39D58;
   border-radius: 10px;
   margin-bottom: 50px;
+  background-color: transparent;
 }
 
 .loginWrapper{
@@ -308,6 +310,19 @@ Input Color
   color: white;
 }
 
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .backgroundImage{
+    display: none;
+  }
+  .signinBlock{
+    position: absolute;
+    height: 100vh;
+    background-color: #011548;
+    width: 100%;
+    z-index: 1;
+    margin-left:0px;
+  }
+}
 
 /* need to enlarge the image
 need to make the textfield white
