@@ -13,7 +13,7 @@ class EditForm extends React.Component {
   }
   componentDidMount () {
     if (this.props.signIn) {
-      this.props.dispatch(getProfile(this.props.match.params.id))
+      this.props.dispatch(getProfile(this.props.signIn.UserId))
       this.props.dispatch(getWorkStatusList())
       this.props.dispatch(getCohortList())
     }
@@ -30,7 +30,7 @@ class EditForm extends React.Component {
     return (
       <React.Fragment>
         {
-          (this.props.profile && this.props.signIn && (this.props.profile.id === this.props.signIn.userId))
+          (this.props.profile && this.props.signIn && this.props.workStatuses && (this.props.profile.id === this.props.signIn.userId))
             ? <Form profile={this.props.profile}
               submit={this.handleSubmit}/>
             : <div>Loading...</div>
