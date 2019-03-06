@@ -66,6 +66,13 @@ export default class Nav extends Component {
                 {' '}
                 <Link to="/">Graduate Feed</Link>
               </MenuItem>
+              <MenuItem>
+              <Link
+                to="/signin"
+              >
+                Edit
+              </Link>
+              </MenuItem>
             </Menu>
           </div>
         </div>
