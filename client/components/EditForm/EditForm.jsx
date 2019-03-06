@@ -1,7 +1,7 @@
 import React from 'react'
 import './editform.css'
 import {connect} from 'react-redux'
-import {getProfile, getWorkStatusList, updateProfile} from '../../api/users'
+import {getProfile, getWorkStatusList, getCohortList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
 
 class EditForm extends React.Component {
@@ -13,6 +13,7 @@ class EditForm extends React.Component {
   componentDidMount () {
     this.props.dispatch(getProfile(this.props.match.params.id))
     this.props.dispatch(getWorkStatusList())
+    this.props.dispatch(getCohortList())
   }
 
   handleSubmit (profile) {
@@ -34,7 +35,8 @@ class EditForm extends React.Component {
 function mapStateToProps (state) {
   return {
     profile: state.profile,
-    workStatuses: state.workStatuses
+    workStatuses: state.workStatuses,
+    cohortList: state.cohortList
   }
 }
 

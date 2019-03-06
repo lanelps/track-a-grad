@@ -24,6 +24,19 @@ export function receiveWorkStatusList (workStatuses) {
   }
 }
 
+export function requestCohortList () {
+  return {
+    type: 'REQUEST_COHORT_LIST'
+  }
+}
+
+export function receiveCohortList (cohortList) {
+  return {
+    type: 'RECEIVE_COHORT_LIST',
+    cohortList: cohortList
+  }
+}
+
 export function editProfile () {
   return {
     type: 'EDIT_PROFILE'

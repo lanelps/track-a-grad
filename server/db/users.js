@@ -5,6 +5,7 @@ module.exports = {
   getGraduates,
   getProfile,
   getStatuses,
+  getCohortList,
   getPortfolio,
   updateUser,
   updateProfile,
@@ -40,6 +41,11 @@ function getProfile (id, db = connection) {
 
 function getStatuses (db = connection) {
   return db('work_statuses')
+    .select()
+}
+
+function getCohortList (db = connection) {
+  return db('cohorts')
     .select()
 }
 
