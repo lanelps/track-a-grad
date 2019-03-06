@@ -1,11 +1,11 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 
 import TextField from '@material-ui/core/TextField'
 import './form.css'
 class Form extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       id: props.profile.id,
@@ -24,7 +24,8 @@ class Form extends React.Component {
       mostRecentStartDate: props.profile.mostRecentStartDate,
       mostRecentEndDate: props.profile.mostRecentEndDate,
       mostRecentDescription: props.profile.mostRecentDescription,
-      redirect: false
+      redirect: false,
+      workStatuses: props.workStatuses
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -33,29 +34,29 @@ class Form extends React.Component {
     this.setRedirect = this.setRedirect.bind(this)
   }
 
-  handleChange (e) {
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  statusChange (e) {
+  statusChange(e) {
     this.setState({
       workStatusId: Number(e.target.value)
     })
   }
 
-  handleSubmit () {
+  handleSubmit() {
     this.props.submit(this.state, this.setRedirect())
   }
 
-  setRedirect () {
+  setRedirect() {
     this.setState({
       redirect: true
     })
   }
 
-  render () {
+  render() {
     if (this.state.redirect) {
       return <Redirect to={`/graduatedashboard/${this.state.id}`} />
     }
@@ -63,12 +64,12 @@ class Form extends React.Component {
       <React.Fragment>
         <Nav />
         <div className="container">
-          <div className="spacer"></div>
+          <div className="spacer" />
           <div className="titleWrapperForm">
             <span className="Title">
               <h1>Edit Profile</h1>
             </span>
-            <div className="seperator"></div>
+            <div className="seperator" />
             <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField
@@ -99,8 +100,13 @@ class Form extends React.Component {
                 onChange={this.statusChange}
                 value={this.state.workStatusId}
               >
-                <option value="1">Available</option>
-                <option value="2">Unavailable</option>
+                {this.state.workStatuses.map(status => {
+                  return (
+                    <option key={status.id} value={status.id}>
+                      {status.status}
+                    </option>
+                  )
+                })}
               </select>
               <br />
               <TextField
@@ -125,7 +131,7 @@ class Form extends React.Component {
                 placeholder="Description"
               />
               <br />
-              <div className="seperator"></div>
+              <div className="seperator" />
               <h2>CONTACT INFORMATION</h2>
               <TextField
                 id="standard-dense"
@@ -160,7 +166,7 @@ class Form extends React.Component {
                 placeholder="Insert link to Github Profile"
               />{' '}
               <br />
-              <div className="seperator"></div>
+              <div className="seperator" />
               <h2>SKILLS</h2>
               <TextField
                 id="standard-dense"
@@ -172,7 +178,7 @@ class Form extends React.Component {
                 type="text"
                 placeholder="Insert Specific Programming Languages, Libraries or Competencies"
               />
-              <div className="seperator"></div>
+              <div className="seperator" />
               <h2>WORK</h2>
               <TextField
                 id="standard-dense"
