@@ -78,6 +78,36 @@ export function signIn (email, password, confirmSuccess) {
   }
 }
 
+export function Register (firstName, lastName, email, password, confirmSuccess) {
+  const user = {firstName, lastName, email, password}
+  return (dispatch) => {
+    dispatch(requestRegister())
+    request('post', '/api/v1/auth/register')
+      .send(user)
+      .then(res => {
+        const token = saveAuthToken(res.body.token)
+        dispatch(receiveSignIn(res.body))
+        dispatch(getGraduateDetails(token.id))
+        dispatch(clearError())
+        confirmSuccess(token.id)
+      })
+      .catch(err => {
+        if (err.response) {
+          // Show message from 400 response.
+          const res = err.response.body
+          const msg = "Username and password don't match an existing user"
+          if (res && res.errorType === 'INVALID_CREDENTIALS') {
+            return dispatch(showError(msg))
+          }
+        } else {
+          // Something exploded.
+          console.error(err)
+        }
+        dispatch(showError('An unexpected error has occurred.'))
+      })
+  }
+}
+
 export function getGraduateDetails (userId) {
   return (dispatch) => {
     dispatch(requestGraduateDetails())

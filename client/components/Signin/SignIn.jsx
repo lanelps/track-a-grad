@@ -92,7 +92,7 @@ class SignIn extends Component {
 
 function mapStateToProps (state) {
   return {
-    signin: state.signIn
+    signin: state.signIn // TODO: remove, not used
   }
 }
 export default connect(mapStateToProps)(SignIn)
