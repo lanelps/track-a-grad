@@ -1,5 +1,6 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import Nav from '../Nav/Nav'
 
 import TextField from '@material-ui/core/TextField'
 import './form.css'
@@ -60,16 +61,14 @@ class Form extends React.Component {
     }
     return (
       <React.Fragment>
+        <Nav />
         <div className="container">
-          <img
-            className="logo"
-            src="../../images/trackergrad-logo.png"
-            alt="tracker"
-          />
+          <div className="spacer"></div>
           <div className="titleWrapperForm">
             <span className="Title">
               <h1>Edit Profile</h1>
             </span>
+            <div className="seperator"></div>
             <form onSubmit={this.handleSubmit}>
               <h2>ABOUT YOU</h2>
               <TextField
@@ -126,6 +125,7 @@ class Form extends React.Component {
                 placeholder="Description"
               />
               <br />
+              <div className="seperator"></div>
               <h2>CONTACT INFORMATION</h2>
               <TextField
                 id="standard-dense"
@@ -160,6 +160,7 @@ class Form extends React.Component {
                 placeholder="Insert link to Github Profile"
               />{' '}
               <br />
+              <div className="seperator"></div>
               <h2>SKILLS</h2>
               <TextField
                 id="standard-dense"
@@ -171,6 +172,7 @@ class Form extends React.Component {
                 type="text"
                 placeholder="Insert Specific Programming Languages, Libraries or Competencies"
               />
+              <div className="seperator"></div>
               <h2>WORK</h2>
               <TextField
                 id="standard-dense"
