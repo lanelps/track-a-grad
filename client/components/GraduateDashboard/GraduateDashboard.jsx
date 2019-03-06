@@ -23,13 +23,7 @@ class GraduateDashboard extends Component {
             <div className="spacer" />
             <h1 className="gradDashboard-title">Graduate Profile</h1>
             <div className="graduatedashboard">
-              <Link
-                className="editButton"
-                key={this.props.profile.id}
-                to={`/graduatedashboard/${this.props.profile.id}/form`}
-              >
-                <img src='../../images/pencil.png' alt="pencil"/>
-              </Link>
+
               <DashBoardHeader
                 firstName={this.props.profile.firstName}
                 lastName={this.props.profile.lastName}
