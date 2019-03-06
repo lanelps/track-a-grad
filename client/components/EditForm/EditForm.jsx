@@ -3,7 +3,6 @@ import './editform.css'
 import {connect} from 'react-redux'
 import {getProfile, getWorkStatusList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
-import InvalidLogIn from '../Signin/InValidLogIn'
 
 class EditForm extends React.Component {
   constructor (props) {
