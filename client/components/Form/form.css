@@ -1,0 +1,27 @@
+.titleWrapperForm {
+  margin-top: 20px;
+  padding: 40px 30px 60px 30px;
+  background-color: white;
+  width: 70%;
+  margin-left: 35px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.34);
+  border-radius: 18px;
+}
+
+.submit {
+  display: block;
+  text-decoration: none;
+  border: none;
+  border-radius: 18px;
+  margin-top: 40px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #011548;
+}
+
+.submit:hover {
+  background-color: #042a8a;
+  cursor: pointer;
+}
+
