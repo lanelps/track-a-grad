@@ -13,7 +13,7 @@ class EditForm extends React.Component {
   }
   componentDidMount () {
     if (this.props.signIn) {
-      this.props.dispatch(getProfile(this.props.signIn.UserId))
+      this.props.dispatch(getProfile(this.props.signIn.userId))
       this.props.dispatch(getWorkStatusList())
       this.props.dispatch(getCohortList())
     }
