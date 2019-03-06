@@ -2,7 +2,7 @@ import React from 'react'
 import './editform.css'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {getProfile, getWorkStatusList, updateProfile} from '../../api/users'
+import {getProfile, getWorkStatusList, getCohortList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
 
 class EditForm extends React.Component {
@@ -13,8 +13,9 @@ class EditForm extends React.Component {
   }
   componentDidMount () {
     if (this.props.signIn) {
-      this.props.dispatch(getProfile(this.props.signIn.userId))
+      this.props.dispatch(getProfile(this.props.signIn.UserId))
       this.props.dispatch(getWorkStatusList())
+      this.props.dispatch(getCohortList())
     }
   }
 
@@ -43,6 +44,7 @@ function mapStateToProps (state) {
   return {
     profile: state.profile,
     workStatuses: state.workStatuses,
+    cohortList: state.cohortList,
     signIn: state.signIn
   }
 }

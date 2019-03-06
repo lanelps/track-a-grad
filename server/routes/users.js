@@ -14,6 +14,16 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/profiles/cohortlist', (req, res) => {
+  db.getCohortList()
+    .then(getCohortList => {
+      res.json(getCohortList)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
 router.get('/profiles/workstatuslist', (req, res) => {
   db.getStatuses()
     .then(workStatuses => {
