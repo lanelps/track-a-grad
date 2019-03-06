@@ -2,9 +2,8 @@ import React from 'react'
 import './editform.css'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {getProfile, getWorkStatusList, updateProfile} from '../../api/users'
+import {getProfile, getWorkStatusList, getCohortList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
-import SignIn from '../SignIn/SignIn'
 
 class EditForm extends React.Component {
   constructor (props) {
@@ -16,6 +15,7 @@ class EditForm extends React.Component {
     if (this.props.signIn) {
       this.props.dispatch(getProfile(this.props.signIn.userId))
       this.props.dispatch(getWorkStatusList())
+      this.props.dispatch(getCohortList())
     }
   }
 
@@ -30,7 +30,7 @@ class EditForm extends React.Component {
     return (
       <React.Fragment>
         {
-          (this.props.profile && this.props.signIn && (this.props.profile.id === this.props.signIn.userId))
+          (this.props.profile && this.props.signIn && this.props.workStatuses && (this.props.profile.id === this.props.signIn.userId))
             ? <Form profile={this.props.profile}
               submit={this.handleSubmit}/>
             : <div>Loading...</div>
@@ -44,6 +44,7 @@ function mapStateToProps (state) {
   return {
     profile: state.profile,
     workStatuses: state.workStatuses,
+    cohortList: state.cohortList,
     signIn: state.signIn
   }
 }

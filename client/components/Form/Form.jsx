@@ -99,8 +99,8 @@ class Form extends React.Component {
                 onChange={this.statusChange}
                 value={this.state.workStatusId}
               >
-                <option value="1">Available</option>
-                <option value="2">Unavailable</option>
+                <option value='1'>Available</option>
+                <option value='2'>Unavailable</option>
               </select>
               <br />
               <TextField
