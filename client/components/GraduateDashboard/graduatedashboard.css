@@ -11,3 +11,7 @@
 .editButton{
 float:right;
 } 
+
+.editButton:hover{
+  transform: scale(1.2)
+  } 
