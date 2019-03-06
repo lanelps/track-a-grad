@@ -100,13 +100,8 @@ class Form extends React.Component {
                 onChange={this.statusChange}
                 value={this.state.workStatusId}
               >
-                {this.state.workStatuses.map(status => {
-                  return (
-                    <option key={status.id} value={status.id}>
-                      {status.status}
-                    </option>
-                  )
-                })}
+                <option value='1'>Available</option>
+                <option value='2'>Unavailable</option>
               </select>
               <br />
               <TextField

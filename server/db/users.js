@@ -5,6 +5,7 @@ module.exports = {
   getGraduates,
   getProfile,
   getStatuses,
+  getCohortList,
   getPortfolio,
   updateUser,
   updateProfile,
@@ -48,6 +49,11 @@ function getProfile (id, db = connection) {
 
 function getStatuses (db = connection) {
   return db('work_statuses')
+    .select()
+}
+
+function getCohortList (db = connection) {
+  return db('cohorts')
     .select()
 }
 
@@ -102,5 +108,6 @@ function registerGraduate ({email, password, firstName, lastName}, db = connecti
     .then(() => generateHash(password))
     .then(hash => db('users').insert({email, hash, boolean: true}))
     .then(userId => userId[0])
-    .then(userId => db('profiles').insert({'user_id': userId, 'first_name': firstName, 'last_name': lastName, 'cohort_id': '', 'profile_picture': '', 'location': '', 'cv_location': '', 'description': '', 'github_url': '', 'work_statuses_id': '', 'skills': ''}))
+    .then(userId => db('profiles').insert({user_id: userId, first_name: firstName, last_name: lastName, cohort_id: '12', profile_picture: '', location: '', cv_location: '', description: '', 'github_url': '', work_statuses_id: 1, skills: ''}))
+    // .then(() => db('cohorts').insert({cohort: 'George', year: 2019}))
 }
