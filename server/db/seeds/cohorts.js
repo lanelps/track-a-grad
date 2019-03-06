@@ -4,6 +4,7 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('cohorts').insert([
+        {id: 0, cohort: 'Select Cohort', year: 'Select Year'},
         {id: 1, cohort: 'Kauri', year: '2016'},
         {id: 2, cohort: 'Kowhai', year: '2016'},
         {id: 3, cohort: 'Kahikatea', year: '2016'},
@@ -15,7 +16,7 @@ exports.seed = function (knex, Promise) {
         {id: 9, cohort: 'Kauri', year: '2018'},
         {id: 10, cohort: 'Mamaku', year: '2018'},
         {id: 11, cohort: 'Nikau', year: '2018'},
-        {id: 12, cohort: 'Harakeke', year: '2019'},
+        {id: 12, cohort: 'Harakeke', year: '2019'}
       ])
     })
 }

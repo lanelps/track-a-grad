@@ -4,6 +4,7 @@ const {generateHash} = require('../auth/hash')
 module.exports = {
   getGraduates,
   getProfile,
+  getStatuses,
   getPortfolio,
   updateUser,
   updateProfile,
@@ -35,6 +36,11 @@ function getProfile (id, db = connection) {
     .where('users.id', id)
     .first()
     .select('users.id as id', 'email', 'first_name as firstName', 'last_name as lastName', 'profile_picture as profilePicture', 'cohort', 'year', 'work_statuses.status as workStatus', 'work_statuses_id as workStatusId', 'profiles.location as location', 'cv_location as cv', 'profiles.description as description', 'skills', 'github_url as githubUrl', 'most_recent_employment_details.role as mostRecentRole', 'most_recent_employment_details.organisation as mostRecentOrganisation', 'most_recent_employment_details.location as mostRecentLocation', 'most_recent_employment_details.start_date as mostRecentStartDate', 'most_recent_employment_details.end_date as mostRecentEndDate', 'most_recent_employment_details.description as mostRecentDescription')
+}
+
+function getStatuses (db = connection) {
+  return db('work_statuses')
+    .select()
 }
 
 function getPortfolio (id, db = connection) {
