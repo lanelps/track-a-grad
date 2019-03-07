@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/signin" component={SignIn} />
           <Route path="/registration" component={Registration} />
         </Switch>
-      </React.Fragment>
+      </React.Fragment> 
     </Router>
   )
 }
