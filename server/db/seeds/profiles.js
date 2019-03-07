@@ -13,7 +13,7 @@ exports.seed = function (knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar31.png',
           location: 'Auckland',
           cv_location: 'https://aubreytekanawa.github.io/profile/',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: 'Kiaora tatou, I am a papakainga housing consultant. I am currently also serving as a board member for Waikato Tainui and have worked most recently worked as a senior advisor in Maori Housing for Te Puni Kokiri. I have been highly active in Maori governance and in particular the promotion and development of papakainga housing throuhgout Aotearoa. I had come to Dev Academy to add tech skills to my kete as I view a knowledge of the tech industry as being a prerequisite for being able to meaningful engage in the future development of my tribe.',
           github_url: 'https://github.com/aubreytekanawa',
           work_statuses_id: 2,
           skills: 'Git & Github, HTML, CSS, Basic JavaScript, Express, Node.js, Knex, React'
@@ -27,10 +27,10 @@ exports.seed = function (knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar32.png',
           location: 'Auckland',
           cv_location: 'https://nz.linkedin.com/in/david-luttig-bb670272',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: 'I am motivated Full-Stack Developer whose current primary focus is to become a Cloud DevOps engineer and Developer, where I can help build and improve business\'s web apps and hosting solution. With my numerous experience in IT support service, I aim to provide the best support through technology for end users and businesses to achieve their goals. I strive to add values to the business.',
           github_url: 'https://github.com/DLuttig',
           work_statuses_id: 1,
-          skills: 'Git & Github, HTML, CSS, JavaScript, Express, Node.js, Knex, React & Redux'
+          skills: 'Git, Github, HTML, CSS, JavaScript, Express, Node.js, Knex, React & Redux'
         },
         {
           id: 3,
@@ -41,10 +41,10 @@ exports.seed = function (knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar38.png',
           location: 'Auckland',
           cv_location: 'https://nz.linkedin.com/in/evandah-steadman-810a3ab3',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: 'I am a creative UI / UX designer, with a strong skillset in user-centric design, full-stack development, and team management. I am passionate about translating innovative product visions into beautiful designs to help reach market successfully.',
           github_url: 'https://github.com/evandahs15',
           work_statuses_id: 1,
-          skills: 'Git & Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux, Material UI'
+          skills: 'CSS, React, JavaScript, Redux, SASS, Material UI'
         },
         {
           id: 4,
@@ -55,10 +55,10 @@ exports.seed = function (knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar36.png',
           location: 'Auckland',
           cv_location: '',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: '',
           github_url: 'https://github.com/jason-simpson',
           work_statuses_id: 1,
-          skills: 'Git & Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
+          skills: 'Git, Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
         },
         {
           id: 5,
@@ -69,10 +69,10 @@ exports.seed = function (knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar32.png',
           location: 'Auckland',
           cv_location: '',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: '',
           github_url: 'https://github.com/lanelps',
           work_statuses_id: 1,
-          skills: 'Git & Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
+          skills: 'Git, Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
         },
         {
           id: 6,
@@ -82,11 +82,11 @@ exports.seed = function (knex, Promise) {
           cohort_id: 12,
           profile_picture: 'server/public/images/avatars/avatar31.png',
           location: 'Auckland',
-          cv_location: '',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          cv_location: 'https://www.linkedin.com/in/rikihoeata/',
+          description: 'I launched Craft Smoothie in 2016, after 9 years of juggling a professional rugby career with a full-time job. Being no stranger to the challenge of maintaining a nutritious diet with a demanding schedule, it was a natural transition for me to start a company that would enable others to live more productive and healthy lives.',
           github_url: 'https://github.com/craftedcraft',
           work_statuses_id: 1,
-          skills: 'Git & Github, HTML, CSS, JavaScript, Node.js, Knex, React & Redux'
+          skills: 'Git, Github, JavaScript, Node.js, Knex, React & Redux, HTML, CSS,'
         }
       ])
     })
