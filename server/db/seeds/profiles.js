@@ -62,8 +62,7 @@ exports.seed = function(knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar36.png',
           location: 'Auckland',
           cv_location: '',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem quisquam aliquam corrupti? Ad, est voluptatibus alias quod accusantium illum autem, inventore quae fugiat mollitia, quia dolorem odit laborum quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus enim vel, veritatis quibusdam nobis quod a eligendi itaque dignissimos ratione perspiciatis ab nisi iste? Commodi eum culpa ipsa vel!',
+          description: 'I like figuring out how things work by breaking them',
           github_url: 'https://github.com/jason-simpson',
           work_statuses_id: 1,
           skills:
@@ -78,7 +77,7 @@ exports.seed = function(knex, Promise) {
           profile_picture: 'server/public/images/avatars/avatar32.png',
           location: 'Auckland',
           cv_location: '',
-          description: 'Im a web developer with a passion in design',
+          description: 'Im a web developer with a love for design',
           github_url: 'https://github.com/lanelps',
           work_statuses_id: 1,
           skills:
