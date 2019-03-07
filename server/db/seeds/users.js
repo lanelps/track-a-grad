@@ -9,7 +9,7 @@ exports.seed = function (knex, Promise) {
         generateHash('david'),
         generateHash('evandah'),
         generateHash('jason'),
-        generateHash('lane'),
+        generateHash('jess'),
         generateHash('riki')
       ])
         .then(([aubreyHash, davidHash, evandahHash, jasonHash, laneHash, rikiHash]) => {
@@ -45,7 +45,7 @@ exports.seed = function (knex, Promise) {
             },
             {
               id: 5,
-              email: 'lanelps@gmail.com',
+              email: 'jess@morgan.com',
               hash: laneHash,
               last_login: new Date(),
               boolean: true
