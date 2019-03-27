@@ -5,6 +5,7 @@ import {Redirect} from 'react-router-dom'
 import {getProfile, getWorkStatusList, getCohortList, updateProfile} from '../../api/users'
 import Form from '../Form/Form'
 
+
 class EditForm extends React.Component {
   constructor(props) {
     super(props)
