@@ -49,7 +49,7 @@
     "react-bootstrap": "^1.0.0-beta.5",
     "react-hamburger-menu": "^1.1.1",
     "react-mail-form": "^1.0.2",
-    "react-pose": "^4.0.8",
+    "react-pose": "^4.0.9",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
